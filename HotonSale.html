@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FAVICON -->
+    <link rel="icon" href="images/favicon.png" type="images/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <!-- FONTS and ICONS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/HotonSalestyles.css">
+    <title>Hot! On Sale</title>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <header>
+        <input type ="checkbox" name ="" id ="chk1">
+        <input type="hidden" id="username" value="alexa">
+        <input type="hidden" id="password" value="alexathegreat">
+        <div class="logo"><h1>ADANE</h1></div>
+            <div class="search-box">
+                <form>
+                    <input type ="text" name ="search" id ="srch" placeholder="Search">
+                    <button type ="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="Contact Us.html">Contact Us</a></li>
+                <li><a href="HotonSale.html">Hot on Sale</a></li>
+            </ul>
+
+            <button class="btn" onclick="toggleLogin()">Log In</button>
+            <div class="overlay">
+              <div class="login">
+                <div class="header">
+                  <h1>Login</h1>
+                  <i class="fas fa-times" onclick="toggleLogin()"></i>
+                </div>
+                <div class="body">
+                  <form action="#" class="form">
+                    <input type="text" placeholder="Username" class="username" />
+                    <input type="password" placeholder="Password" class="password" />
+                  </form>
+                </div>
+                <div class="footer">
+                  <button id="login_btn">Login</button>
+                </div>
+              </div>
+            </div>
+    </header>
+
+    <!-- Three Pictures Here -->
+    <div class="choyen">
+        <center><hr class="hr1"></center>
+        <h2 class="sale">Hot! On Sale: This Friday!</h2>
+        <center><hr class="hr1"></center>
+        <div class="gwapoko">
+            <!-- sample images for products -->
+            <div class="yawa">
+            <img src="Images/AsusTUFGAMINGDASHF15.jpg" alt="" class="product1" width="300px" height="300px">
+                <h3 class="peepee">ASUS TUF Gaming Dash F15</h3>
+                    <p class="peepee">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil ipsum culpa expedita minus laboriosam saepe quas facilis fugit soluta ut vero ipsam voluptatem alias eos reiciendis non, nostrum qui asperiores.</p>
+                    <button class="cart">ADD TO CART <span class="material-symbols-outlined">
+                        shopping_cart
+                        </span></button>
+            </div>
+            <div class="yawa">
+            <img src="Images/MEG_z790aceMSI.png" alt="" class="product2" width="280px" height="300px">
+                <h3 class="peepee">MEG Z790 Ace MSI</h3>
+                    <p class="peepee">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quibusdam, architecto quisquam explicabo unde nostrum laudantium maiores odio sint aliquam mollitia? Tempora, perferendis commodi voluptatem iure distinctio laboriosam. Officia, ipsa.</p>
+                    <button class="cart">ADD TO CART <span class="material-symbols-outlined">
+                        shopping_cart
+                        </span></button>
+            </div>
+            <div class="yawa">
+            <img src="Images/rtx2060tufgaming.jfif" alt="" class="product3" width="240px" height="300px">
+                <h3 class="peepee">RTX 2060 TUF Gaming</h3>
+                    <p class="peepee">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, beatae quisquam consequuntur dicta incidunt aspernatur minima, ipsa sed, qui cum praesentium quae laboriosam minus rerum corporis ad nam quibusdam? Nulla?</p>
+                    <button class="cart">ADD TO CART <span class="material-symbols-outlined">
+                        shopping_cart
+                        </span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <nav class="nav-list">
+            <ul>
+                <li><a href="">Privacy |</a></li>
+                <li><a href="">Cookie Policy |</a></li>
+                <li><a href="">Legal Notice |</a></li>
+                <li><a href="">Additional Legal Information |</a></li>
+                <li><a href="">Cookie Settings</a></li>
+            </ul>
+            <br>
+            <p>© 2022 Acer Inc. Intel, the Intel Logo, Intel Inside, Intel Core, and Core Inside are trademarks of Intel Corporation or its subsidiaries in the U.S. and/or other countries.</p>
+        </nav>
+    </footer>
+    <script>
+        // LOGIN FORM
+
+        const loginbutton = document.getElementById('login_btn'); 
+        loginbutton.addEventListener('click', e => { //addEventListener method/ function sa javascript nga maclick sa isa ka button
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            var input_username = document.getElementsByClassName('username')[0].value;
+            var input_password = document.getElementsByClassName('password')[0].value;
+            
+            if(input_username == username && input_password == password)
+            {
+                var overlay = document.getElementById('overlay');
+                overlay.classList.remove("open");
+                overlay.classList.add("close");
+
+                var url = "https://www.google.com/"; //REDIRECT TO PRODUCT
+                window.open(url);
+            }
+            else
+            {
+                alert(`You can't go to google! Please try again.`);
+            }
+        })
+    </script>
+</body>
+</html>
