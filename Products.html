@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.png" type="images/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/Productsstyles.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <header>
+        <input type ="checkbox" name ="" id ="chk1">
+        <input type="hidden" id="username" value="alexa">
+        <input type="hidden" id="password" value="alexathegreat">
+        <div class="logo"><h1>ADANE</h1></div>
+            <div class="search-box">
+                <form>
+                    <input type ="text" name ="search" id ="srch" placeholder="Search">
+                    <button type ="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="Contact Us.html">Contact Us</a></li>
+                <li><a href="HotonSale.html">Hot on Sale</a></li>
+            </ul>
+
+            <button class="btn" onclick="toggleLogin()">Log In</button>
+            <div class="overlay">
+              <div class="login">
+                <div class="header">
+                  <h1>Login</h1>
+                  <i class="fas fa-times" onclick="toggleLogin()"></i>
+                </div>
+                <div class="body">
+                  <form action="#" class="form">
+                    <input type="text" placeholder="Username" class="username" />
+                    <input type="password" placeholder="Password" class="password" />
+                  </form>
+                </div>
+                <div class="footer">
+                  <button id="login_btn">Login</button>
+                </div>
+              </div>
+            </div>
+    </header>
+    
+    <div class="main---container">
+        <main id="product---container">
+            <table id="product---table">
+                <tr>
+                    <td>
+                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
+                        <span>$999999.00</span><br />
+                        
+                        <button class="buyNow">Buy Now</button>
+                        <button class="addToCart" data-id="1" data-name="Laptop1">Add to Cart</button>
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
+                        <span>$999999.00</span><br />
+                        
+                        <button class="buyNow">Buy Now</button>
+                        <button class="addToCart" data-id="2" data-name="Laptop2">Add to Cart</button>
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
+                        <span>$999999.00</span><br />
+                        
+                        <button class="buyNow">Buy Now</button>
+                        <button class="addToCart" data-id="3" data-name="Laptop3">Add to Cart</button>
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
+                        <span>$999999.00</span><br />
+                        
+                        <button class="buyNow">Buy Now</button>
+                        <button class="addToCart" data-id="4" data-name="Laptop4">Add to Cart</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
+                        <span>$999999.00</span><br />
+                        
+                        <button class="buyNow">Buy Now</button>
+                        <button class="addToCart" data-id="5" data-name="Laptop5">Add to Cart</button>
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
+                        <span>$999999.00</span><br />
+                        
+                        <button class="buyNow">Buy Now</button>
+                        <button class="addToCart" data-id="6" data-name="Laptop6">Add to Cart</button>
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
+                        <span>$999999.00</span><br />
+                        
+                        <button class="buyNow">Buy Now</button>
+                        <button class="addToCart" data-id="7" data-name="Laptop7">Add to Cart</button>
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
+                        <span>$999999.00</span><br />
+                        
+                        <button class="buyNow">Buy Now</button>
+                        <button class="addToCart" data-id="8" data-name="Laptop8">Add to Cart</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
+                        <span>$999999.00</span><br />
+                        
+                        <button class="buyNow">Buy Now</button>
+                        <button class="addToCart" data-id="9" data-name="Laptop9">Add to Cart</button>
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
+                        <span>$999999.00</span><br />
+                        
+                        <button class="buyNow">Buy Now</button>
+                        <button class="addToCart" data-id="10" data-name="Laptop10">Add to Cart</button>
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
+                        <span>$999999.00</span><br />
+                        
+                        <button class="buyNow">Buy Now</button>
+                        <button class="addToCart" data-id="11" data-name="Laptop11">Add to Cart</button>
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
+                        <span>$999999.00</span><br />
+                        
+                        <button class="buyNow">Buy Now</button>
+                        <button class="addToCart" data-id="12" data-name="Laptop12">Add to Cart</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
+                        <span>$999999.00</span><br />
+                        
+                        <button class="buyNow">Buy Now</button>
+                        <button class="addToCart" data-id="13" data-name="Laptop13">Add to Cart</button>
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
+                        <span>$999999.00</span><br />
+                        
+                        <button class="buyNow">Buy Now</button>
+                        <button class="addToCart" data-id="14" data-name="Laptop14">Add to Cart</button>
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
+                        <span>$999999.00</span><br />
+                        
+                        <button class="buyNow">Buy Now</button>
+                        <button class="addToCart" data-id="15" data-name="Laptop15">Add to Cart</button>
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
+                        <span>$999999.00</span><br />
+                        
+                        <button class="buyNow">Buy Now</button>
+                        <button class="addToCart" data-id="16" data-name="Laptop16">Add to Cart</button>
+                    </td>
+                </tr>
+            </table>
+        </main>
+        <aside id="table---container">
+            <table id="product---append---table">
+                <tr>
+                    <td class="table---data--image">
+                        <img class="table-image-name" src="images/lptop.png" alt="Table Image" />
+                    </td>
+                    <td class="table--data--title">
+                        <span class="product--quantity">Quantity: <button class="subtractBtn">-</button><span class="product--quantit--number">3</span><button class="addBtn">+</button></span><br /><br />
+                        <span class="product--price">Total Price: <span class="price-text">$99.00</span></span><br />
+                        <span class="product--name">Product Name: Laptop</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="table---data--image">
+                        <img class="table-image-name" src="images/lptop.png" alt="Table Image" />
+                    </td>
+                    <td class="table--data--title">
+                        <span class="product--quantity">Quantity: <button class="subtractBtn">-</button><span class="product--quantit--number">3</span><button class="addBtn">+</button></span><br /><br />
+                        <span class="product--price">Total Price: <span class="price-text">$99.00</span></span><br />
+                        <span class="product--name">Product Name: Laptop</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="table---data--image">
+                        <img class="table-image-name" src="images/lptop.png" alt="Table Image" />
+                    </td>
+                    <td class="table--data--title">
+                        <span class="product--quantity">Quantity: <button class="subtractBtn">-</button><span class="product--quantit--number">3</span><button class="addBtn">+</button></span><br /><br />
+                        <span class="product--price">Total Price: <span class="price-text">$99.00</span></span><br />
+                        <span class="product--name">Product Name: Laptop</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="table---data--image">
+                        <img class="table-image-name" src="images/lptop.png" alt="Table Image" />
+                    </td>
+                    <td class="table--data--title">
+                        <span class="product--quantity">Quantity: <button class="subtractBtn">-</button><span class="product--quantit--number">3</span><button class="addBtn">+</button></span><br /><br />
+                        <span class="product--price">Total Price: <span class="price-text">$99.00</span></span><br />
+                        <span class="product--name">Product Name: Laptop</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="table---data--image">
+                        <img class="table-image-name" src="images/lptop.png" alt="Table Image" />
+                    </td>
+                    <td class="table--data--title">
+                        <span class="product--quantity">Quantity: <button class="subtractBtn">-</button><span class="product--quantit--number">3</span><button class="addBtn">+</button></span><br /><br />
+                        <span class="product--price">Total Price: <span class="price-text">$99.00</span></span><br />
+                        <span class="product--name">Product Name: Laptop</span>
+                    </td>
+                </tr>
+            </table>
+        </aside>
+    </div>
+
+
+
+<!-- javaScipt not yet done-->
+
+
+
+    <script>
+        // LOGIN FORM
+
+        const loginbutton = document.getElementById('login_btn'); 
+        loginbutton.addEventListener('click', e => { //addEventListener method/ function sa javascript nga maclick sa isa ka button
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            var input_username = document.getElementsByClassName('username')[0].value;
+            var input_password = document.getElementsByClassName('password')[0].value;
+            
+            if(input_username == username && input_password == password)
+            {
+                var overlay = document.getElementById('overlay');
+                overlay.classList.remove("open");
+                overlay.classList.add("close");
+
+                var url = "https://www.google.com/"; //REDIRECT TO PRODUCT
+                window.open(url);
+            }
+            else
+            {
+                alert(`You can't go to google! Please try again.`);
+            }
+        })
+        
+        // LOG IN FORM
+        // function toggleLogin() {
+        //   document.querySelector(".overlay").classList.toggle("open");
+        // }
+
+        // const add_to_cart = document.querySelectorAll('.addToCart');
+        // const buy_now = document.querySelectorAll('.buyNow');
+
+        // let count = 1;
+
+        // add_to_cart.forEach(el => el.addEventListener('click', event => {
+        //     var id = event.target.getAttribute("data-id");
+            
+
+        //     var product_table_row = `<tr>
+        //                                 <td class="table---data--image">
+        //                                     <img class="table-image-name" src="images/lptop.png" alt="Table Image" />
+        //                                 </td>
+        //                                 <td class="table--data--title">
+        //                                     <input type="hidden" class="append_id_${id}" value="${id}" />
+        //                                     <span class="product--quantity">Quantity: <button class="subtractBtn">-</button><span class="product--quantit--number">${count++}</span><button class="addBtn">+</button></span><br /><br />
+        //                                     <span class="product--price">Total Price: <span class="price-text">$99.00</span></span><br />
+        //                                     <span class="product--name">Product Name: Laptop</span>
+        //                                 </td>
+        //                             </tr>`;
+
+        //     document.getElementById('product---append---table').innerHTML += product_table_row;
+        //     var appended_hidden_id = document.getElementsByClassName(`append_id_${id}`)[0].value;
+
+        //     // table_body.append(product_table_row)
+        // }));
+    </script>
+
+</body>
+</html>
