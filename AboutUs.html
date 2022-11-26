@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Us</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+ <!-- NAVIGATION -->
+ <header>
+	<input type ="checkbox" name ="" id ="chk1">
+	<input type="hidden" id="username" value="alexa">
+	<input type="hidden" id="password" value="alexathegreat">
+	<div class="logo"><h1>ADANE</h1></div>
+		<div class="search-box">
+			<form>
+				<input type ="text" name ="search" id ="srch" placeholder="Search">
+				<button type ="submit"><i class="fa fa-search"></i></button>
+			</form>
+		</div>
+		<ul>
+			<li><a href="Homepage.html">Home</a></li>
+			<li><a href="Products.html">Products</a></li>
+			<li><a href="AboutUs.html">About Us</a></li>
+			<li><a href="Contact Us.html">Contact Us</a></li>
+			<li><a href="HotonSale.html">Hot on Sale</a></li>
+		</ul>
+
+		<button class="btn" onclick="toggleLogin()">Log In</button>
+		<div id="overlay" class="overlay">
+		  <div class="login">
+			<div class="header">
+			  <h1>Login</h1>
+			  <i class="fas fa-times" onclick="toggleLogin()"></i>
+			</div>
+			<div class="body">
+			  <form action="#" class="form">
+				<input type="text" placeholder="Username" class="username" />
+				<input type="password" placeholder="Password" class="password" />
+			  </form>
+			</div>
+			<div class="footer">
+			  <button id="login_btn">Login</button>
+			</div>
+		  </div>
+		</div>
+</header>
+<section class="about">
+	<div class="main">
+		<img src="images/e35f6e03a1608a37a8428bff7369e1d4.jpg">
+			<div class="about-text">
+				<h2>About Us</h2>
+				<h5>Developer & Designer</h5>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa at impedit sint, voluptatem nobis voluptate corrupti, optio pariatur excepturi iure officiis beatae provident nostrum quae dolores aperiam laudantium deleniti id.	
+			</p>
+		</div>
+	</div>
+</section>
+
+</body>
+</html>
