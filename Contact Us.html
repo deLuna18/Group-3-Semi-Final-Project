@@ -1,0 +1,137 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.png" type="images/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/Contact Us style.css">
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <header>
+        <input type ="checkbox" name ="" id ="chk1">
+        <input type="hidden" id="username" value="alexa">
+        <input type="hidden" id="password" value="alexathegreat">
+        <div class="logo"><h1>ADANE</h1></div>
+            <div class="search-box">
+                <form>
+                    <input type ="text" name ="search" id ="srch" placeholder="Search">
+                    <button type ="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="Contact Us.html">Contact Us</a></li>
+                <li><a href="HotonSale.html">Hot on Sale</a></li>
+            </ul>
+
+            <button class="btn" onclick="toggleLogin()">Log In</button>
+            <div class="overlay">
+            <div class="login">
+                <div class="header">
+                <h1>Login</h1>
+                <i class="fas fa-times" onclick="toggleLogin()"></i>
+                </div>
+                <div class="body">
+                <form action="#" class="form">
+                    <input type="text" placeholder="Username" class="username" />
+                    <input type="password" placeholder="Password" class="password" />
+                </form>
+                </div>
+                <div class="footer">
+                <button id="login_btn">Login</button>
+                </div>
+            </div>
+            </div>
+    </header>   
+    
+    <div class="container">
+        <h1>Connect With Us</h1>
+        <p>We would love to respond to your queries and help you succeed. <br /> Feel free to get in touch with us.</p>
+        <div class="cont-box">
+            <div class="cont-left">
+                <h3>Sent your request</h3>
+                <form action="">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="">Name</label>
+                            <input type="text" name="" id="" placeholder="Maria Alexa H. de Luna">
+                        </div>
+                        <div class="input-group">
+                            <label for="">Phone</label>
+                            <input type="text" name="" id="" placeholder="+063 2094 2839">
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="">Email</label>
+                            <input type="email" name="" id="" placeholder="Alexadeluna494@gmail.com">
+                        </div>
+                        <div class="input-group">
+                            <label for="">Subject</label>
+                            <input type="text" name="" id="" placeholder="Product Demo">
+                        </div>
+                    </div>
+                    
+                    <label for="">Message</label>
+                    <textarea name="" id="" cols="30" rows="5" placeholder="Your Message"></textarea>
+                    <div class="bu2">
+                        <button type="submit">SEND</button>
+                    </div>
+                </form>
+            </div>
+            <div class="cont-right">
+                <h3>Reach Us</h3>
+
+                <table>
+                    <tr>
+                        <td>Email</td>
+                        <td>contact_us@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td>+063 2094 2839</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>Philippines, Cebu City, 1062 Juana Osmena Ext. Cebu City</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // LOGIN FORM
+
+        const loginbutton = document.getElementById('login_btn'); 
+        loginbutton.addEventListener('click', e => { //addEventListener method/ function sa javascript nga maclick sa isa ka button
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            var input_username = document.getElementsByClassName('username')[0].value;
+            var input_password = document.getElementsByClassName('password')[0].value;
+            
+            if(input_username == username && input_password == password)
+            {
+                var overlay = document.getElementById('overlay');
+                overlay.classList.remove("open");
+                overlay.classList.add("close");
+
+                var url = "https://www.google.com/"; //REDIRECT TO PRODUCT
+                window.open(url);
+            }
+            else
+            {
+                alert(`You can't go to google! Please try again.`);
+            }
+        })
+    </script>
+</body>
+</html>
