@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIOGESIC</title>
+    <link rel="icon" href="images/favicon.png" type="images/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/HomePagestyle.css">
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <header>
+        <input type ="checkbox" name ="" id ="chk1">
+        <input type="hidden" id="username" value="alexa">
+        <input type="hidden" id="password" value="alexathegreat">
+        <div class="logo"><h1>ADANE</h1></div>
+            <div class="search-box">
+                <form>
+                    <input type ="text" name ="search" id ="srch" placeholder="Search">
+                    <button type ="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Contact Us.html">Contact Us</a></li>
+                <li><a href="HotonSale.html">Hot on Sale</a></li>
+            </ul>
+
+            <button class="btn" onclick="toggleLogin()">Log In</button>
+            <div id="overlay" class="overlay">
+              <div class="login">
+                <div class="header">
+                  <h1>Login</h1>
+                  <i class="fas fa-times" onclick="toggleLogin()"></i>
+                </div>
+                <div class="body">
+                  <form action="#" class="form">
+                    <input type="text" placeholder="Username" class="username" />
+                    <input type="password" placeholder="Password" class="password" />
+                  </form>
+                </div>
+                <div class="footer">
+                  <button id="login_btn">Login</button>
+                </div>
+              </div>
+            </div>
+    </header>
+
+    <!-- SLIDESHOW -->
+    <div class="container">  
+        <div class="slider">
+            <div class="slides">
+                    <!-- BUTTONS -->
+                <input type="radio" name="btn"  id="radio1">
+                <input type="radio" name="btn"  id="radio2">
+                <input type="radio" name="btn"  id="radio3">
+                <input type="radio" name="btn"  id="radio4">
+
+                    <!-- IMAGES -->
+                <div class="slide first">
+                    <img src="images/slide1.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="images/slide2.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="images/slide3.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="images/slide4.jpg" alt="">
+                </div>
+
+                    <!-- AUTOMATIC NAVIGATION -->\
+                <div class="auto-nav">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+            </div>
+
+            <!-- MANUAL NAVIGATION -->
+            <div class="man-nav">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </div>
+        </div>
+    </div>
+
+    <!-- GALLERY 1 -->
+    <div class="main-row">
+        <div class="min">
+            <table id="gallery-table">
+                <tr>
+                    <td class="column">
+                        <img src="images/c.laptop.png" alt="" width="100%">
+                    </td>
+                    <td class="column">
+                        <img src="images/c.desktop.png" alt="" width="100%">
+                    </td>
+                    <td class="column">
+                        <img src="images/c.monitor.png" alt=""width="100%">
+                    </td>
+                    <td class="column">
+                        <img src="images/c.accessoriess.png" alt="" width="100%">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-row">
+                        <h2>LAPTOPS</h2> <br> 
+                    </td>
+                    <td class="text-row">
+                        <h2>DESKTOPS</h2> <br> 
+                    </td>
+                    <td class="text-row">
+                        <h2>MONITORS</h2> <br> 
+                    </td>
+                    <td class="text-row">
+                        <h2>ACCESSORIES</h2> <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <hr style="color: white;">
+
+
+    <!-- BANNER -->
+    <div class="banner">
+        <div class="banner-in">
+            <img src="images/lptop.png" alt="">
+        </div>
+        <div class="banner-text">
+            <h2>IT LIES WITHIN</h2> <br>
+            <p><a href="">LEARN MORE</a></p>
+        </div>
+    </div>
+
+    <!-- GALLERY 2 -->
+    <div class="main-row" style="text-align: center;">
+        <div style="text-align: center;">
+            <table id="gallery-table">
+                <tr>
+                    <td class="column">
+                        <img src="images/ds.jpeg" alt="" width="100%">
+                    </td>
+                    <td class="column">
+                        <img src="images/ee.jpg" alt="" width="100%">
+                    </td>
+                    <td class="column">
+                        <img src="images/pp.jpg" alt=""width="100%">
+                    </td>
+                    <td class="column">
+                        <img src="images/Planet9-3.jpg" alt="" width="100%">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-row">
+                        <h2>STORY</h2> <br> 
+                        <a href="#">Learn More</a>
+                    </td>
+                    <td class="text-row">
+                        <h2>STORY</h2> <br> 
+                        <a href="#">Learn More</a>
+                    </td>
+                    <td class="text-row">
+                        <h2>STORY</h2> <br> 
+                        <a href="#">Learn More</a>
+                    </td>
+                    <td class="text-row">
+                        <h2>STORY</h2> <br> 
+                        <a href="#">Learn More</a> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <nav class="nav-list">
+            <ul>
+                <li><a href="">Privacy |</a></li>
+                <li><a href="">Cookie Policy |</a></li>
+                <li><a href="">Legal Notice |</a></li>
+                <li><a href="">Additional Legal Information |</a></li>
+                <li><a href="">Cookie Settings</a></li>
+            </ul>
+            <br>
+            <p>© 2022 Acer Inc. Intel, the Intel Logo, Intel Inside, Intel Core, and Core Inside are trademarks of Intel Corporation or its subsidiaries in the U.S. and/or other countries.</p>
+        </nav>
+    </footer>
+
+    <script>
+        // LOG IN FORM
+        function toggleLogin() {
+          document.querySelector(".overlay").classList.toggle("open");
+        }
+        // SLIDE
+        var counter = 1;
+        setInterval(function(){
+            document.getElementById('radio' + counter).checked = true;
+            counter ++;
+            if(counter > 4){
+                counter = 1; 
+            }
+        }, 5000); 
+
+        // LOGIN FORM
+
+        const loginbutton = document.getElementById('login_btn'); 
+        loginbutton.addEventListener('click', e => { //addEventListener method/ function sa javascript nga maclick sa isa ka button
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            var input_username = document.getElementsByClassName('username')[0].value;
+            var input_password = document.getElementsByClassName('password')[0].value;
+            
+            if(input_username == username && input_password == password)
+            {
+                var overlay = document.getElementById('overlay');
+                overlay.classList.remove("open");
+                overlay.classList.add("close");
+
+                var url = "https://www.google.com/"; //REDIRECT TO PRODUCT
+                window.open(url);
+            }
+            else
+            {
+                alert(`You can't go to google! Please try again.`);
+            }
+        })
+    </script>
+</body>
+</html>
