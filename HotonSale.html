@@ -15,119 +15,141 @@
     <title>Hot! On Sale</title>
 </head>
 <body>
-    <!-- NAVIGATION -->
+    <!-- navigation start -->
     <header>
-        <input type ="checkbox" name ="" id ="chk1">
-        <input type="hidden" id="username" value="alexa">
-        <input type="hidden" id="password" value="alexathegreat">
-        <div class="logo"><h1>ADANE</h1></div>
-            <div class="search-box">
-                <form>
-                    <input type ="text" name ="search" id ="srch" placeholder="Search">
-                    <button type ="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
-            <ul>
-                <li><a href="Homepage.html">Home</a></li>
-                <li><a href="Products.html">Products</a></li>
-                <li><a href="AboutUs.html">About Us</a></li>
-                <li><a href="Contact Us.html">Contact Us</a></li>
-                <li><a href="HotonSale.html">Hot on Sale</a></li>
-            </ul>
+        <div class="logo"><h1>ADANE</h1></div> <!-- logo -->
+        <ul>
+            <li><a href="Homepage.html" >Home</a></li> <!--webpage-->
+            <li><a href="Products.html">Products</a></li> <!--webpage-->
+            <li><a href="aboutus.html">About Us</a></li> <!--webpage-->
+            <li><a href="Contact Us.html">Contact Us</a></li> <!--webpage-->
+            <li><a href="HotonSale.html" id="hot">Hot on Sale</a></li> <!--webpage-->
+        </ul>
 
-            <button class="btn" onclick="toggleLogin()">Log In</button>
-            <div class="overlay">
-              <div class="login">
+        <!-- Log-In form -->
+        <input type="hidden" id="username" value="alexa"> <!--username-->
+        <input type="hidden" id="password" value="alexathegreat"> <!--password-->
+        <button class="btn" onclick="toggleLogin()">Log In</button> <!--btn is for button-->
+            <div id="overlay" class="overlay"> <!--inside of the LogIn button-->
+              <div class="login">   
                 <div class="header">
-                  <h1>Login</h1>
-                  <i class="fas fa-times" onclick="toggleLogin()"></i>
+                  <h1>Login</h1> <!--inside of a form --> 
+                  <i class="fas fa-times" onclick="toggleLogin()"></i> <!--i-fas fa-times is a fonts/logo from font-awesome-->
                 </div>
+
                 <div class="body">
                   <form action="#" class="form">
-                    <input type="text" placeholder="Username" class="username" />
+                    <input type="text" placeholder="Username" class="username" />  
                     <input type="password" placeholder="Password" class="password" />
                   </form>
                 </div>
+
                 <div class="footer">
-                  <button id="login_btn">Login</button>
+                  <button id="login_btn">Login</button> <!--this is the log-in button for the inside-form -->
                 </div>
               </div>
             </div>
     </header>
+    <!-- navigation end -->
 
-    <!-- Three Pictures Here -->
-    <div class="choyen">
-        <center><hr class="hr1"></center>
-        <h2 class="sale">Hot! On Sale: This Friday!</h2>
-        <center><hr class="hr1"></center>
-        <div class="gwapoko">
-            <!-- sample images for products -->
-            <div class="yawa">
-            <img src="Images/AsusTUFGAMINGDASHF15.jpg" alt="" class="product1" width="300px" height="300px">
-                <h3 class="peepee">ASUS TUF Gaming Dash F15</h3>
-                    <p class="peepee">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil ipsum culpa expedita minus laboriosam saepe quas facilis fugit soluta ut vero ipsam voluptatem alias eos reiciendis non, nostrum qui asperiores.</p>
-                    <button class="cart">ADD TO CART <span class="material-symbols-outlined">
-                        shopping_cart
-                        </span></button>
-            </div>
-            <div class="yawa">
-            <img src="Images/MEG_z790aceMSI.png" alt="" class="product2" width="280px" height="300px">
-                <h3 class="peepee">MEG Z790 Ace MSI</h3>
-                    <p class="peepee">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quibusdam, architecto quisquam explicabo unde nostrum laudantium maiores odio sint aliquam mollitia? Tempora, perferendis commodi voluptatem iure distinctio laboriosam. Officia, ipsa.</p>
-                    <button class="cart">ADD TO CART <span class="material-symbols-outlined">
-                        shopping_cart
-                        </span></button>
-            </div>
-            <div class="yawa">
-            <img src="Images/rtx2060tufgaming.jfif" alt="" class="product3" width="240px" height="300px">
-                <h3 class="peepee">RTX 2060 TUF Gaming</h3>
-                    <p class="peepee">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, beatae quisquam consequuntur dicta incidunt aspernatur minima, ipsa sed, qui cum praesentium quae laboriosam minus rerum corporis ad nam quibusdam? Nulla?</p>
-                    <button class="cart">ADD TO CART <span class="material-symbols-outlined">
-                        shopping_cart
-                        </span></button>
-            </div>
-        </div>
-    </div>
+    <div class="main---container">
+        <main id="product---container">
+            <hr class="hr1">
+            <h1 class="title">Hot! On Sale</h1>
+            <hr class="hr1">
+            <table id="product---table">
+                <tr>
+                    <td>
+                        <img class="img-thumbnail" src="images/acces1.jpg" alt="Product Image" />
+                        <h4>Nitro Headset | Black</h4><br />
+                        <del>$39.39</del>
+                        <span>$20.99</span><br />
+                        
+                        <a href="Products.html"><button class="buyNow" data-id="1" data-name="Laptop1" data-model="Acer" data-price="222">Buy Now</button></a> 
+                        <a href="Products.html"><button class="addToCart" data-id="1" data-price="9999" data-name="Laptop1">Add to Cart</button></a> 
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="images/acces3.jpg" alt="Product Image" />
+                        <h4>Access 3</h4><br />
+                        <del>$200.00</del>
+                        <span>$159.99</span><br />
+                        
+                        <a href="Products.html"><button class="buyNow" data-id="2" data-name="Laptop2" data-model="Acer" data-price="222">Buy Now</button></a>
+                        <a href="Products.html"><button class="addToCart" data-id="2" data-price="9999" data-name="Laptop2">Add to Cart</button></a>
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="images/acces4.jpg" alt="Product Image" />
+                        <h4>Predator Aethon 301 TKL Keyboard - PKB010 - PMP711</h4><br />
+                        <del>$69.99</del>
+                        <span>$59.99</span><br />
+                        
+                        <a href="Products.html"><button class="buyNow" data-id="3" data-name="Laptop3" data-model="Acer" data-price="222">Buy Now</button></a>
+                        <a href="Products.html"><button class="addToCart" data-id="3" data-price="9999" data-name="Laptop3">Add to Cart</button></a>
+                    </td>
+                </tr>
 
-    <!-- FOOTER -->
-    <footer>
-        <nav class="nav-list">
-            <ul>
-                <li><a href="">Privacy |</a></li>
-                <li><a href="">Cookie Policy |</a></li>
-                <li><a href="">Legal Notice |</a></li>
-                <li><a href="">Additional Legal Information |</a></li>
-                <li><a href="">Cookie Settings</a></li>
-            </ul>
-            <br>
-            <p>© 2022 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, eum dicta ipsa fugiat commodi rerum suscipit assumenda sit, sint ad amet modi, ducimus soluta laudantium consectetur deserunt minima qui nihil.</p>
-        </nav>
-    </footer>
-    <script>
-        // LOGIN FORM
-
-        const loginbutton = document.getElementById('login_btn'); 
-        loginbutton.addEventListener('click', e => { //addEventListener method/ function sa javascript nga maclick sa isa ka button
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-
-            var input_username = document.getElementsByClassName('username')[0].value;
-            var input_password = document.getElementsByClassName('password')[0].value;
-            
-            if(input_username == username && input_password == password)
-            {
-                var overlay = document.getElementById('overlay');
-                overlay.classList.remove("open");
-                overlay.classList.add("close");
-
-                var url = "https://www.google.com/"; //REDIRECT TO PRODUCT
-                window.open(url);
+                <tr>
+                    <td>
+                        <img class="img-thumbnail" src="images/lp4.jpg" alt="Product Image" />
+                        <h4>Nitro 5 AN515-57-73DH Gaming Notebook</h4><br />
+                        <del>$2,499.99</del>
+                        <span>$2,000.99</span><br />
+                        
+                        <a href="Products.html"><button class="buyNow" data-id="5" data-name="Laptop" data-model="Acer" data-price="222">Buy Now</button></a>
+                        <a href="Products.html"><button class="addToCart" data-id="5" data-price="9999" data-name="Laptop5">Add to Cart</button></a>
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="images/desktop1.jpg" alt="Product Image" />
+                        <h4>Chromebox</h4><br />
+                        <del>$629.99</del>
+                        <span>$450.99</span><br />
+                        
+                        <a href="Products.html"><button class="buyNow" data-id="6" data-name="Laptop" data-model="Acer" data-price="222">Buy Now</button></a>
+                        <a href="Products.html"><button class="addToCart" data-id="6" data-price="9999" data-name="Laptop6">Add to Cart</button></a>
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" src="images/desktop2.jpg" alt="Product Image" />
+                        <h4>Veriton X4680G Desktop Computer</h4><br />
+                        <del>$1,049.99</del>
+                        <span>$749.99</span><br />
+                        
+                        <a href="Products.html"><button class="buyNow" data-id="7" data-name="Laptop" data-model="Acer" data-price="222">Buy Now</button></a>
+                        <a href="Products.html"><button class="addToCart" data-id="7" data-price="9999" data-name="Laptop7">Add to Cart</button></a>
+                    </td>
+                </tr>
+            </table>
+        </main>
+        <script>
+            // LOG IN FORM
+            function toggleLogin() {
+              document.querySelector(".overlay").classList.toggle("open");
             }
-            else
-            {
-                alert(`You can't go to google! Please try again.`);
-            }
-        })
-    </script>
+    
+    
+            // LOGIN FORM
+    
+            const loginbutton = document.getElementById('login_btn'); 
+            loginbutton.addEventListener('click', e => { //addEventListener method/ function sa javascript nga maclick sa isa ka button
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+    
+                var input_username = document.getElementsByClassName('username')[0].value;
+                var input_password = document.getElementsByClassName('password')[0].value;
+                
+                if(input_username == username && input_password == password)
+                {
+                    var overlay = document.getElementById('overlay');
+                    overlay.classList.remove("open");
+                    overlay.classList.add("close");
+    
+                    var url = "Products.html"; //REDIRECT TO PRODUCT
+                    window.open(url);
+                }
+                else
+                {
+                    alert(`You can't go to google! Please try again.`);
+                }
+            })
+        </script>
 </body>
 </html>

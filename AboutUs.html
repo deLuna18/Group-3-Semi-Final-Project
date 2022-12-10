@@ -1,65 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>About Us</title>
-	<link rel="icon" href="images/favicon.png" type="images/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/aboutus.css">
+    <link rel="icon" href="images/favicon.png" type="images/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
-	<link rel="stylesheet" type="text/css" href="css/AboutUs.css">
+    <title>Document</title>
 </head>
 <body>
- <!-- NAVIGATION -->
- <header>
-	<input type ="checkbox" name ="" id ="chk1">
-	<input type="hidden" id="username" value="alexa">
-	<input type="hidden" id="password" value="alexathegreat">
-	<div class="logo"><h1>ADANE</h1></div>
-		<div class="search-box">
-			<form>
-				<input type ="text" name ="search" id ="srch" placeholder="Search">
-				<button type ="submit"><i class="fa fa-search"></i></button>
-			</form>
-		</div>
-		<ul>
-			<li><a href="Homepage.html">Home</a></li>
-			<li><a href="Products.html">Products</a></li>
-			<li><a href="AboutUs.html">About Us</a></li>
-			<li><a href="Contact Us.html">Contact Us</a></li>
-			<li><a href="HotonSale.html">Hot on Sale</a></li>
-		</ul>
+    <!-- navigation start -->
+    <header>
+      <div class="logo"><h1>ADANE</h1></div> <!-- logo -->
+      <ul>
+          <li><a href="Homepage.html" >Home</a></li> <!--webpage-->
+          <li><a href="Products.html">Products</a></li> <!--webpage-->
+          <li><a href="aboutus.html" id="about">About Us</a></li> <!--webpage-->
+          <li><a href="Contact Us.html">Contact Us</a></li> <!--webpage-->
+          <li><a href="HotonSale.html">Hot on Sale</a></li> <!--webpage-->
+      </ul>
 
-		<button class="btn" onclick="toggleLogin()">Log In</button>
-		<div id="overlay" class="overlay">
-		  <div class="login">
-			<div class="header">
-			  <h1>Login</h1>
-			  <i class="fas fa-times" onclick="toggleLogin()"></i>
-			</div>
-			<div class="body">
-			  <form action="#" class="form">
-				<input type="text" placeholder="Username" class="username" />
-				<input type="password" placeholder="Password" class="password" />
-			  </form>
-			</div>
-			<div class="footer">
-			  <button id="login_btn">Login</button>
-			</div>
-		  </div>
-		</div>
-</header>
-<section class="about">
-	<div class="main">
-		<img src="images/e35f6e03a1608a37a8428bff7369e1d4.jpg">
-			<div class="about-text">
-				<h2>About Us</h2>
-				<h5>Developer & Designer</h5>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa at impedit sint, voluptatem nobis voluptate corrupti, optio pariatur excepturi iure officiis beatae provident nostrum quae dolores aperiam laudantium deleniti id.	
-			</p>
-		</div>
-	</div>
-</section>
+      <!-- Log-In form -->
+      <input type="hidden" id="username" value="alexa"> <!--username-->
+      <input type="hidden" id="password" value="alexathegreat"> <!--password-->
+      <button class="btn" onclick="toggleLogin()">Log In</button> <!--btn is for button-->
+          <div id="overlay" class="overlay"> <!--inside of the LogIn button-->
+            <div class="login">   
+              <div class="header">
+                <h1>Login</h1> <!--inside of a form --> 
+                <i class="fas fa-times" onclick="toggleLogin()"></i> <!--i-fas fa-times is a fonts/logo from font-awesome-->
+              </div>
 
+              <div class="body">
+                <form action="#" class="form">
+                  <input type="text" placeholder="Username" class="username" />  
+                  <input type="password" placeholder="Password" class="password" />
+                </form>
+              </div>
+
+              <div class="footer">
+                <button id="login_btn">Login</button> <!--this is the log-in button for the inside-form -->
+              </div>
+            </div>
+          </div>
+  </header>
+  <!-- navigation end -->
+
+  <!-- start of fieldset -->
+  <div class="container">
+    <h1>About Us</h1>
+      <hr id="hr" />
+    <div class="cons">
+      <fieldset>
+        <legend id="legend">Our Story</legend>
+        <p>We are students of University of Cebu-Main Campus. On our WEBDEV11, we were tasked to make an e-commerce site for our Semi-Final and Final Project altogether and as Information Technology students, there were no more second thoughts that we came up with an idea of making an e-commerce site religiously just for computers, it didn't take much decision-making into coming up with this idea for our website as it strongly correlates to our course, another reason for deciding to create an offline computer/laptop shopping site is that it doesn't need to have a lot of categories like Shopee for example where there is more than ten(10) category of products to be listed, we wanted to create an only one field e-commerce site, products strictly only for computers and laptops, third one and the last one is the aesthetics into making a computer ecommerce site. We subtly worked on our frontend designing into making the website look futuristic and "gamer-y", adding active rgb animation with a black background theme. All in all, we feel very accomplished for what we have created and especially the functions of the website which we have Alexa De Luna to thank for, she deserves all the credit.</p>
+      </fieldset>
+    </div>
+  </div>
+  <!-- end of fieldset -->
+  <!-- start of images for the members -->
+    <div class="wrapper">
+
+      <!-- emel haya -->
+      <div class="wrapper-in">
+        <div class="images">
+          <img src="images/emel.jpg" alt="Alexa" >
+          <div class="container_1">
+            <h2>Emel Jefferson I. Haya</h2>
+            <h3>LEADER</h3>
+            <p><button class="button">Group 3</button></p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- alexa deluna -->
+      <div class="wrapper-in">
+        <div class="images">
+          <img src="images/alexa.jpg" alt="Alexa" >
+          <div class="container_1">
+            <h2>Maria Alexa H. de Luna</h2>
+            <h3>MEMBER</h3>
+            <p><button class="button">Group 3</button></p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- dave redillas -->
+      <div class="wrapper-in">
+        <div class="images">
+          <img src="images/dave.jpg" alt="Dave">
+          <div class="container_1">
+            <h2>Dave Brian Redillas</h2>
+            <h3>MEMBER</h3>
+            <p><button class="button">Group 3</button></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- axel parreño -->
+      <div class="wrapper-in">
+        <div class="images">
+          <img src="images/axel.jpg" alt="Axel" >
+          <div class="container_1">
+            <h2>Axel Greg T. Parreño</h2>
+            <h3>MEMBER</h3>
+            <p><button class="button">Group 3</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrapper-in">
+        <div class="images">
+          <img src="images/franz.jpg" alt="Franz">
+          <div class="container_1">
+            <h2>Franz Adrian L Nacar</h2>
+            <h3>MEMBER</h3>
+            <p><button class="button">Group 3</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- end of images for the members -->
 </body>
+<script>
+  // LOG IN FORM
+    // LogIn button
+  function toggleLogin() {
+  document.querySelector(".overlay").classList.toggle("open");
+   }
+  
+  // inside of the LogIn button
+  const loginbutton = document.getElementById('login_btn'); 
+  loginbutton.addEventListener('click', e => { //addEventListener method/ function sa javascript nga maclick sa isa ka button
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    var input_username = document.getElementsByClassName('username')[0].value;
+    var input_password = document.getElementsByClassName('password')[0].value;
+            
+    if(input_username == username && input_password == password){
+      var overlay = document.getElementById('overlay');
+      overlay.classList.remove("open");
+      overlay.classList.add("close");
+
+      var url = "Products.html"; //redirect to the product
+      window.open(url);
+      }else{
+      alert(`You can't go to google! Please try again.`); 
+      }
+      })
+</script>
 </html>

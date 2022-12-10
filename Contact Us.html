@@ -10,45 +10,42 @@
     <link rel="stylesheet" href="css/Contact Us style.css">
 </head>
 <body>
-    <!-- NAVIGATION -->
+    <!-- navigation start -->
     <header>
-        <input type ="checkbox" name ="" id ="chk1">
-        <input type="hidden" id="username" value="alexa">
-        <input type="hidden" id="password" value="alexathegreat">
-        <div class="logo"><h1>ADANE</h1></div>
-            <div class="search-box">
-                <form>
-                    <input type ="text" name ="search" id ="srch" placeholder="Search">
-                    <button type ="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
-            <ul>
-                <li><a href="Homepage.html">Home</a></li>
-                <li><a href="Products.html">Products</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="Contact Us.html">Contact Us</a></li>
-                <li><a href="HotonSale.html">Hot on Sale</a></li>
-            </ul>
+        <div class="logo"><h1>ADANE</h1></div> <!-- logo -->
+        <ul>
+            <li><a href="Homepage.html" >Home</a></li> <!--webpage-->
+            <li><a href="Products.html">Products</a></li> <!--webpage-->
+            <li><a href="aboutus.html">About Us</a></li> <!--webpage-->
+            <li><a href="Contact Us.html" id="contact">Contact Us</a></li> <!--webpage-->
+            <li><a href="HotonSale.html">Hot on Sale</a></li> <!--webpage-->
+        </ul>
 
-            <button class="btn" onclick="toggleLogin()">Log In</button>
-            <div class="overlay">
-            <div class="login">
+        <!-- Log-In form -->
+        <input type="hidden" id="username" value="alexa"> <!--username-->
+        <input type="hidden" id="password" value="alexathegreat"> <!--password-->
+        <button class="btn" onclick="toggleLogin()">Log In</button> <!--btn is for button-->
+            <div id="overlay" class="overlay"> <!--inside of the LogIn button-->
+              <div class="login">   
                 <div class="header">
-                <h1>Login</h1>
-                <i class="fas fa-times" onclick="toggleLogin()"></i>
+                  <h1>Login</h1> <!--inside of a form --> 
+                  <i class="fas fa-times" onclick="toggleLogin()"></i> <!--i-fas fa-times is a fonts/logo from font-awesome-->
                 </div>
+
                 <div class="body">
-                <form action="#" class="form">
-                    <input type="text" placeholder="Username" class="username" />
+                  <form action="#" class="form">
+                    <input type="text" placeholder="Username" class="username" />  
                     <input type="password" placeholder="Password" class="password" />
-                </form>
+                  </form>
                 </div>
+
                 <div class="footer">
-                <button id="login_btn">Login</button>
+                  <button id="login_btn">Login</button> <!--this is the log-in button for the inside-form -->
                 </div>
+              </div>
             </div>
-            </div>
-    </header>   
+    </header>
+    <!-- navigation end -->
     
     <div class="container">
         <h1>Connect With Us</h1>
@@ -81,7 +78,7 @@
                     <label for="">Message</label>
                     <textarea name="" id="" cols="30" rows="5" placeholder="Your Message"></textarea>
                     <div class="bu2">
-                        <button type="submit">SEND</button>
+                        <button type="submit" onclick="myMessage();">SEND</button>
                     </div>
                 </form>
             </div>
@@ -108,22 +105,28 @@
 
 
     <script>
+        // LOG IN FORM
+        function toggleLogin() {
+          document.querySelector(".overlay").classList.toggle("open");
+        }
+
         // LOGIN FORM
+        // JQUERY BUNDLE PACKAGE 
+        //BUILT IN PACKAGE
+        $(document).on('click', '#login_btn', function() {
+            var username = $('#username').val();
+            var password = $('#password').val();
 
-        const loginbutton = document.getElementById('login_btn'); 
-        loginbutton.addEventListener('click', e => { //addEventListener method/ function sa javascript nga maclick sa isa ka button
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
+            var input_username = $('.username').val();
+            var input_password = $('.password').val();
 
-            var input_username = document.getElementsByClassName('username')[0].value;
-            var input_password = document.getElementsByClassName('password')[0].value;
-            
+            var product_url = $('#product_url').val();
+
             if(input_username == username && input_password == password)
             {
-                var overlay = document.getElementById('overlay');
-                overlay.classList.remove("open");
-                overlay.classList.add("close");
-
+                $('.overlay').removeClass('open');
+                $('.overlay').addClass('close');
+                
                 var url = "https://www.google.com/"; //REDIRECT TO PRODUCT
                 window.open(url);
             }
@@ -131,7 +134,12 @@
             {
                 alert(`You can't go to google! Please try again.`);
             }
-        })
+        });
+
+        //message sent
+        function myMessage(){
+            alert("Message sent successfully");
+        }
     </script>
 </body>
 </html>

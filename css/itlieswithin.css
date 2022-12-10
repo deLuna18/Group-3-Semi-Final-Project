@@ -1,0 +1,23 @@
+html { 
+    background: url(../images/itlieswithinbackground.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 50px;
+    color: white;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+img {
+    width: 700px;
+    size: 700px;
+}
+p {
+    float: left;
+}

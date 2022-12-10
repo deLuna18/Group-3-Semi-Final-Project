@@ -4,68 +4,35 @@
     box-sizing: border-box;
     font-family: Arial;
 }
+
 body{
-    width: 100%;
+    width: 100%; 
     height: 100vh;
-    position: absolute;
 }
 
-/* NAVIGATION */
+/* navigation start */
+/* horizontal navigation */
 header{
     width:100%;
     height: 100px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    z-index: 99;
-    box-shadow: 0 0 10px #000;
-    background: #000000;
-}
-#chk1{
-    display: none;
-}
-i{
-    color:#f2f2f2;
-    cursor: pointer;
-}
+    background: #282A35;
+    position: relative;
+}    
+
 header .logo{
-    flex: -2;
-    color: #ff7200;
+    color: #04AA6D;
     margin-left: 50px;
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 25px;
 }
+
 header .search-box{
-    flex: 1;
     position: relative;
-}
-.search-box input{
-    width:98%;
-    height: 40px;
-    border: none;
-    outline: none;
-    background:#f2f2f2;
-    border-radius: 30px;
-    color:rgb(14, 3, 3);
-    font-size: 16px;
-    padding-left: 5px;
-    padding-right: 40px;
-    text-align: center;
-    margin-left: 6px;
-}
- 
-.search-box button{
-    cursor: pointer;
-    width:40px;
-    height: 40px;
-    border-radius: 30px;
-    border:none;
-    position: absolute;
-    top:0;
-    right: 0;
-    transform: scale(0.9);
-    background: #ff7200;
-    color: #fff;
+    margin-left: 15px;
+    margin-right: 5px;
+    width: 25%;
 }
 
 header ul {
@@ -77,58 +44,131 @@ header ul {
 header ul li{
     list-style: none;
 }
+
 header ul li a{
     text-decoration: none;
     color:#fff;
     font-weight: 600;
     text-transform: uppercase;
     padding: 10px 15px;
-}
-header ul li a:hover{
-    border-bottom: 2px solid #ff7200;
-    color: #ae9e91;
+    margin-left: 2px;
 }
 
-header .menu{
-    font-size: 2.5em;
-    display: none;
-}
-@media(max-width:1000px){
-.search-box button{
-    position: absolute;
-}
-    header ul{
-    position: fixed;
-    top:100px;
-    right: -100%;
-    background: rgba(0,0,0,0.5);
-    height: calc(100vh - 100px);
-    width:50%;
-    flex-direction: column;
-    align-items: center;
-    transition: right 0.5s linear;
-}
-     
-header .menu{
-    display: block;
-    width:100px;
-    text-align: center;
-}
-#chk1:checked ~ ul{
-    right: 0;    
-}
+header ul li :hover{
+    color: #fff;
+    background: #0c0c0c7d;
+    border-radius: 20px;
 }
 
+#home{
+    background-color: #04AA6D;
+    border-radius: 4px;
+}
+
+/* Log-In form */
 .btn {
-    position: absolute;
-    top: 45px;
-    right: 0;
     transform: translate(-50%, -50%);
     padding: 10px;
-    border-radius: 5px;
+    border:none;
     font-size: 0.9em;
     font-weight: 700;
-    background-color: #ff7200;
+    margin-top: 30px;
+    color: #fff;
+    margin-right: 20px;
+}
+  
+.overlay {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+}
+  
+.overlay.open {
+    display: flex;
+    animation: show-overlay 0.5s;
+}
+  
+.login {
+    padding: 50px 25px;
+    background: white;
+    border-radius: 10px;
+    margin-top: 40%;
+}
+  
+.header {
+    position: relative;
+}
+  
+.header h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #000051;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #000051;
+}
+  
+.header i {
+    font-size: 20px;
+    color: #000051;
+    cursor: pointer;
+}
+  
+.body .form input {
+    display: block;
+    padding: 10px;
+    margin: 25px 10px;
+    outline: none;
+    border: solid #000051 1px;
+    color: #000051;
+}
+
+/* foucs - psuedo-class  */
+.body .form input:focus {
+    border-color: #534bae;
+}
+  
+.footer {
+    position: relative;
+    height: 40px;
+    width: 100%;
+}
+/* position absolute - element relative to its parent's position and changing the layout around it. */
+.footer button {
+    position: absolute; 
+    padding: 10px;
+    min-width: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000051;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s;
+}
+  
+.footer button:hover {
+    background: #534bae;
+}
+/* navigation end */
+
+
+/* Log-In form */
+.btn {
+    top: 45px;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border:none;
+    font-size: 0.9em;
+    font-weight: 700;
+    background-color: transparent;
+    margin-top: 30px;
+    color: #fff;
+    margin-right: 20px;
+    cursor: pointer;
 }
   
 .overlay {
@@ -142,48 +182,49 @@ header .menu{
     z-index: 100;
 }
   
-  .overlay.open {
+.overlay.open {
     display: flex;
     animation: show-overlay 0.5s;
-  }
-  
-  @keyframes show-overlay {
+}
+    /* keyframes are used for animation */
+@keyframes show-overlay { 
     0% {
       opacity: 0;
     }
     100% {
       opacity: 1;
     }
-  }
+}
   
-  .login {
+.login {
     padding: 50px 25px;
     background: white;
     border-radius: 10px;
     margin-top: 40%;
-  }
+}
   
-  .header {
+.header {
     position: relative;
-  }
+}
   
-  .header h1 {
+.header h1 {
     text-align: center;
     text-transform: uppercase;
     color: #000051;
     padding-bottom: 7px;
     border-bottom: 2px solid #000051;
-  }
+}
   
-  .header i {
+.header i {
     position: absolute;
     top: 0;
     right: 0;
     font-size: 20px;
     color: #000051;
-  }
+    cursor: pointer;
+}
   
-  .body .form input {
+.body .form input {
     display: block;
     padding: 10px;
     margin: 25px 10px;
@@ -191,20 +232,20 @@ header .menu{
     border: solid #000051 1px;
     color: #000051;
     transition: 0.4s;
-  }
+}
   
-  .body .form input:focus {
+.body .form input:focus {
     border-color: #534bae;
-  }
+}
   
-  .footer {
+.footer {
     position: relative;
     height: 40px;
     width: 100%;
-  }
-  
-  .footer button {
-    position: absolute;
+}
+/* position absolute - element relative to its parent's position and changing the layout around it. */
+.footer button {
+    position: absolute; 
     padding: 10px;
     min-width: 100px;
     left: 50%;
@@ -214,135 +255,131 @@ header .menu{
     color: white;
     cursor: pointer;
     transition: 0.4s;
-  }
+}
   
-  .footer button:hover {
+.footer button:hover {
     background: #534bae;
-  }
+}
+/* navigation end */
 
-/* SLIDESHOW */
-.container{
+/* slideshow start */
+.the---slides{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgb(228, 166, 109),rgb(183, 148, 119), gray );
-    margin: 0;
-    padding: 0;
+    background: #000;
 }
-
 .slider{
     width: 800px;
     height: 500px;
     border-radius: 10px;
     overflow: hidden;
-    margin-top: 5%;
-    margin-bottom: 5%;
 }
-
+  
 .slides{
     width: 500%;
     height: 500px;
     display: flex;
 }
-
+  
 .slides input{
     display: none;
 }
-
+  
 .slide{
     width: 20%;
     transition: 2s;
 }
-
+  
 .slide img{
     width: 800px;
     height: 500px;
 }
-
-    /* MANUAL */    
-.man-nav{
+  
+/*css for manual slide navigation*/
+.navigation---manual{
     position: absolute;
     width: 800px;
     margin-top: -40px;
     display: flex;
     justify-content: center;
 }
-
-.manual-btn{
+  
+.manual---button{
     border: 2px solid #40D3DC;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
     transition: 1s;
 }
-
-.manual-btn:not(:last-child){
+  
+.manual---button:not(:last-child){
     margin-right: 40px;
 }
-
-.manual-btn:hover{
-    background:#40D3DC;
+  
+.manual---button:hover{
+    background: #40D3DC;
 }
-
+  
 #radio1:checked ~ .first{
     margin-left: 0;
 }
-
+  
 #radio2:checked ~ .first{
     margin-left: -20%;
 }
-
+  
 #radio3:checked ~ .first{
     margin-left: -40%;
 }
-
+  
 #radio4:checked ~ .first{
     margin-left: -60%;
 }
-
-    /* AUTOMATIC  */
-.auto-nav{
+  
+/*css for automatic navigation*/  
+.navigation---auto{
     position: absolute;
     display: flex;
     width: 800px;
     justify-content: center;
     margin-top: 460px;
 }
-
-.auto-nav div{
+  
+.navigation---auto div{
     border: 2px solid #40D3DC;
     padding: 5px;
     border-radius: 10px;
     transition: 1s;
 }
-
-.auto-nav div:not(:last-child){
+  
+.navigation---auto div:not(:last-child){
     margin-right: 40px;
 }
-
-#radio1:checked ~ .auto-nav .auto-btn1{
-    background:#40D3DC;
+  
+#radio1:checked ~ .navigation---auto .auto-btn1{
+    background: #40D3DC;
 }
-
-#radio2:checked ~ .auto-nav .auto-btn1{
-    background:#40D3DC;
+  
+#radio2:checked ~ .navigation---auto .auto-btn2{
+    background: #40D3DC;
 }
-
-#radio3:checked ~ .auto-nav .auto-btn1{
-    background:#40D3DC;
+  
+#radio3:checked ~ .navigation---auto .auto-btn3{
+    background: #40D3DC;
 }
-
-#radio4:checked ~ .auto-nav .auto-btn1{
-    background:#40D3DC;
+  
+#radio4:checked ~ .navigation---auto .auto-btn4{
+    background: #40D3DC;
 }
-
 /* GALLERY 1 */
 .main-row{
     background-color: #000000;
     position: relative;
     justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
 .main-row .min{
@@ -408,6 +445,10 @@ header .menu{
     color: white;
 }
 
+
+#i_image{
+    width: 100%;
+}
 
 /* PAGE */
 .banner{
@@ -574,10 +615,3 @@ footer{
     color: white;
     font-size: 0.9em;
 }
-
-
-     
-
-
-
-

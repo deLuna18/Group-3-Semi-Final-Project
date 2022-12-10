@@ -3,188 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIOGESIC</title>
+    <title>ADANE</title>
     <link rel="icon" href="images/favicon.png" type="images/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="css/HomePagestyle.css">
 </head>
 <body>
-    <!-- NAVIGATION -->
+    <!-- navigation start -->
     <header>
-        <input type ="checkbox" name ="" id ="chk1">
-        <input type="hidden" id="username" value="alexa">
-        <input type="hidden" id="password" value="alexathegreat">
-        <div class="logo"><h1>ADANE</h1></div>
-            <div class="search-box">
-                <form>
-                    <input type ="text" name ="search" id ="srch" placeholder="Search">
-                    <button type ="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
-            <ul>
-                <li><a href="Homepage.html">Home</a></li>
-                <li><a href="Products.html">Products</a></li>
-                <li><a href="AboutUs.html">About Us</a></li>
-                <li><a href="Contact Us.html">Contact Us</a></li>
-                <li><a href="HotonSale.html">Hot on Sale</a></li>
-            </ul>
+        <div class="logo"><h1>ADANE</h1></div> <!-- logo -->
+        <ul>
+            <li><a href="Homepage.html" id="home">Home</a></li> <!--webpage-->
+            <li><a href="Products.html">Products</a></li> <!--webpage-->
+            <li><a href="aboutus.html">About Us</a></li> <!--webpage-->
+            <li><a href="Contact Us.html">Contact Us</a></li> <!--webpage-->
+            <li><a href="HotonSale.html">Hot on Sale</a></li> <!--webpage-->
+        </ul>
 
-            <button class="btn" onclick="toggleLogin()">Log In</button>
-            <div id="overlay" class="overlay">
-              <div class="login">
+        <!-- Log-In form start -->
+        <input type="hidden" id="username" value="alexa"> <!--username-->
+        <input type="hidden" id="password" value="alexathegreat"> <!--password-->
+        <button class="btn" onclick="toggleLogin()">Log In</button> <!--btn is for button-->
+            <div id="overlay" class="overlay"> <!--inside of the LogIn button-->
+              <div class="login">   
                 <div class="header">
-                  <h1>Login</h1>
-                  <i class="fas fa-times" onclick="toggleLogin()"></i>
+                  <h1>Login</h1> <!--inside of a form --> 
+                  <i class="fas fa-times" onclick="toggleLogin()"></i> <!--i-fas fa-times is a fonts/logo from font-awesome-->
                 </div>
+
                 <div class="body">
                   <form action="#" class="form">
-                    <input type="text" placeholder="Username" class="username" />
+                    <input type="text" placeholder="Username" class="username" />  
                     <input type="password" placeholder="Password" class="password" />
                   </form>
                 </div>
+
                 <div class="footer">
-                  <button id="login_btn">Login</button>
+                  <button id="login_btn">Login</button> <!--this is the log-in button for the inside-form -->
                 </div>
               </div>
             </div>
+        <!-- Log-In form end -->
     </header>
+    <!-- navigation end -->
 
-    <!-- SLIDESHOW -->
-    <div class="container">  
+    <!--slideshow start-->
+    <div class="the---slides">
         <div class="slider">
             <div class="slides">
-                    <!-- BUTTONS -->
-                <input type="radio" name="btn"  id="radio1">
-                <input type="radio" name="btn"  id="radio2">
-                <input type="radio" name="btn"  id="radio3">
-                <input type="radio" name="btn"  id="radio4">
-
-                    <!-- IMAGES -->
-                <div class="slide first">
-                    <img src="images/slide1.jpg" alt="">
-                </div>
-                <div class="slide">
-                    <img src="images/slide2.jpg" alt="">
-                </div>
-                <div class="slide">
-                    <img src="images/slide3.jpg" alt="">
-                </div>
-                <div class="slide">
-                    <img src="images/slide4.jpg" alt="">
-                </div>
-
-                    <!-- AUTOMATIC NAVIGATION -->\
-                <div class="auto-nav">
-                    <div class="auto-btn1"></div>
-                    <div class="auto-btn2"></div>
-                    <div class="auto-btn3"></div>
-                    <div class="auto-btn4"></div>
-                </div>
+              <!--radio buttons start-->
+              <input type="radio" name="radio-btn" id="radio1">
+              <input type="radio" name="radio-btn" id="radio2">
+              <input type="radio" name="radio-btn" id="radio3">
+              <input type="radio" name="radio-btn" id="radio4">
+              <!--radio buttons end-->
+              <!--slide images start-->
+              <div class="slide first">
+                <img src="images/slide1.jpg" alt="">
+              </div>
+              <div class="slide">
+                <img src="images/slide2.jpg" alt="">
+              </div>
+              <div class="slide">
+                <img src="images/slide3.jpg" alt="">
+              </div>
+              <div class="slide">
+                <img src="images/slide4.jpg" alt="">
+              </div>
+              <!--slide images end-->
+              <!--automatic navigation start-->
+              <div class="navigation---auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+              </div>
+              <!--automatic navigation end-->
             </div>
-
-            <!-- MANUAL NAVIGATION -->
-            <div class="man-nav">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label>
+            <!--manual navigation start-->
+            <div class="navigation---manual">
+              <label for="radio1" class="manual---button"></label>
+              <label for="radio2" class="manual---button"></label>
+              <label for="radio3" class="manual---button"></label>
+              <label for="radio4" class="manual---button"></label>
             </div>
+            <!--manual navigation end-->
         </div>
+          <!--slideshow end-->
     </div>
 
-    <!-- GALLERY 1 -->
+    <!-- images start -->
     <div class="main-row">
         <div class="min">
+            <!-- use table to align all images -->
             <table id="gallery-table">
                 <tr>
                     <td class="column">
-                        <img src="images/c.laptop.png" alt="" width="100%">
+                        <img src="images/c.laptop.png" alt="" id="i_image"> <!--IMAGE-->
                     </td>
                     <td class="column">
-                        <img src="images/c.desktop.png" alt="" width="100%">
+                        <img src="images/c.desktop.png" alt="" id="i_image"> <!--IMAGE-->
                     </td>
                     <td class="column">
-                        <img src="images/c.monitor.png" alt=""width="100%">
+                        <img src="images/c.monitor.png" alt=""id="i_image"> <!--IMAGE-->
                     </td>
                     <td class="column">
-                        <img src="images/c.accessoriess.png" alt="" width="100%">
+                        <img src="images/c.accessoriess.png" alt="" id="i_image"> <!--IMAGE-->
                     </td>
                 </tr>
                 <tr>
                     <td class="text-row">
-                        <h2>LAPTOPS</h2> <br> 
+                        <h2>LAPTOPS</h2> <br> <!--caption / title of each picture-->
                     </td>
                     <td class="text-row">
-                        <h2>DESKTOPS</h2> <br> 
+                        <h2>DESKTOPS</h2> <br> <!--caption / title of each picture-->
                     </td>
                     <td class="text-row">
-                        <h2>MONITORS</h2> <br> 
+                        <h2>MONITORS</h2> <br> <!--caption / title of each picture-->
                     </td>
                     <td class="text-row">
-                        <h2>ACCESSORIES</h2> <br> 
+                        <h2>ACCESSORIES</h2> <br> <!--caption / title of each picture-->
                     </td>
                 </tr>
             </table>
         </div>
     </div>
+    <!-- images end -->
 
-    <hr style="color: white;">
+    <hr />
 
-
-    <!-- BANNER -->
+    <!-- banner start -->
     <div class="banner">
         <div class="banner-in">
             <img src="images/lptop.png" alt="">
         </div>
         <div class="banner-text">
             <h2>IT LIES WITHIN</h2> <br>
-            <p><a href="">LEARN MORE</a></p>
+            <p><a href="itlieswithin.html">LEARN MORE</a></p>
         </div>
     </div>
+    <!-- banner end -->
 
-    <!-- GALLERY 2 -->
-    <div class="main-row" style="text-align: center;">
+    <!-- images 2 start--> 
+    <div class="main-row" style="text-align: center;"> <!--uses table to align all the pictures-->
         <div style="text-align: center;">
             <table id="gallery-table">
-                <tr>
-                    <td class="column">
-                        <img src="images/ds.jpeg" alt="" width="100%">
+                <tr> <!--TR means table row, defines a row of cells in a table-->
+                    <td class="column"> <!--TD means data cell-->
+                        <img src="images/ds.jpeg" alt="" id="i_image">
                     </td>
                     <td class="column">
-                        <img src="images/ee.jpg" alt="" width="100%">
+                        <img src="images/ee.jpg" alt="" id="i_image">
                     </td>
                     <td class="column">
-                        <img src="images/pp.jpg" alt=""width="100%">
+                        <img src="images/pp.jpg" alt=""id="i_image">
                     </td>
                     <td class="column">
-                        <img src="images/Planet9-3.jpg" alt="" width="100%">
+                        <img src="images/Planet9-3.jpg" alt="" id="i_image">
                     </td>
                 </tr>
                 <tr>
                     <td class="text-row">
-                        <h2>STORY</h2> <br> 
-                        <a href="#">Learn More</a>
+                        <h2>ESL One</h2> <br> 
+                        <!-- <a href="learn_more1.html">Learn More</a> -->
                     </td>
                     <td class="text-row">
-                        <h2>STORY</h2> <br> 
-                        <a href="#">Learn More</a>
+                        <h2>Rainbow Six eSports</h2> <br> 
+                        <!-- <a href="learn_more2.html">Learn More</a> -->
                     </td>
                     <td class="text-row">
-                        <h2>STORY</h2> <br> 
-                        <a href="#">Learn More</a>
+                        <h2>PredatorSense</h2> <br> 
+                        <!-- <a href="learn_more3.html">Learn More</a> -->
                     </td>
                     <td class="text-row">
-                        <h2>STORY</h2> <br> 
-                        <a href="#">Learn More</a> 
+                        <h2>Planet9</h2> <br> 
+                        <!-- <a href="learn_more4.html">Learn More</a>  -->
                     </td>
                 </tr>
             </table>
         </div>
     </div>
+    <!-- images 2 end -->
 
-    <!-- FOOTER -->
+    <!-- footer start -->
     <footer>
         <nav class="nav-list">
             <ul>
@@ -195,26 +195,16 @@
                 <li><a href="">Cookie Settings</a></li>
             </ul>
             <br>
-            <p>© 2022 Acer Inc. Intel, the Intel Logo, Intel Inside, Intel Core, and Core Inside are trademarks of Intel Corporation or its subsidiaries in the U.S. and/or other countries.</p>
+            <p>© 2022 Adane Inc. Intel, the Intel Logo, Intel Inside, Intel Core, and Core Inside are trademarks of Intel Corporation or its subsidiaries in the U.S. and/or other countries.</p>
         </nav>
     </footer>
+    <!-- footer end -->
 
     <script>
-        // LOG IN FORM
+        // log in form
         function toggleLogin() {
           document.querySelector(".overlay").classList.toggle("open");
         }
-        // SLIDE
-        var counter = 1;
-        setInterval(function(){
-            document.getElementById('radio' + counter).checked = true;
-            counter ++;
-            if(counter > 4){
-                counter = 1; 
-            }
-        }, 5000); 
-
-        // LOGIN FORM
 
         const loginbutton = document.getElementById('login_btn'); 
         loginbutton.addEventListener('click', e => { //addEventListener method/ function sa javascript nga maclick sa isa ka button
@@ -230,14 +220,25 @@
                 overlay.classList.remove("open");
                 overlay.classList.add("close");
 
-                var url = "https://www.google.com/"; //REDIRECT TO PRODUCT
+                var url = "Products.html"; //redirect to the product
                 window.open(url);
             }
             else
             {
-                alert(`You can't go to google! Please try again.`);
+                alert(`You can't go to google! Please try again.`); 
             }
         })
+
+        // SLIDE
+            var counter = 1;
+        setInterval(function(){
+            document.getElementById('radio' + counter).checked = true;
+            counter ++;
+            if(counter > 4){ //uses condition
+                counter = 1; 
+            }
+        }, 5000); 
+        
     </script>
 </body>
 </html>

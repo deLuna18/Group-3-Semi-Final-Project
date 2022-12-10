@@ -10,62 +10,29 @@ body{
     position: absolute;
 }
 
-/* NAVIGATION */
+/* navigation start */
+/* horizontal navigation */
 header{
     width:100%;
     height: 100px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    z-index: 99;
-    box-shadow: 0 0 10px #000;
-    background: #000000;
-}
-#chk1{
-    display: none;
-}
-i{
-    color:#f2f2f2;
-    cursor: pointer;
-}
+    background: #282A35;
+    position: relative;
+}    
+
 header .logo{
-    flex: -2;
-    color: #ff7200;
+    color: #04AA6D;
     margin-left: 50px;
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 25px;
 }
+
 header .search-box{
-    flex: 1;
     position: relative;
-}
-.search-box input{
-    width:98%;
-    height: 40px;
-    border: none;
-    outline: none;
-    background:#f2f2f2;
-    border-radius: 30px;
-    color:rgb(14, 3, 3);
-    font-size: 16px;
-    padding-left: 5px;
-    padding-right: 40px;
-    text-align: center;
-    margin-left: 6px;
-}
- 
-.search-box button{
-    cursor: pointer;
-    width:40px;
-    height: 40px;
-    border-radius: 30px;
-    border:none;
-    position: absolute;
-    top:0;
-    right: 0;
-    transform: scale(0.9);
-    background: #ff7200;
-    color: #fff;
+    margin-left: 15px;
+    margin-right: 5px;
+    width: 25%;
 }
 
 header ul {
@@ -77,58 +44,50 @@ header ul {
 header ul li{
     list-style: none;
 }
+
 header ul li a{
     text-decoration: none;
     color:#fff;
     font-weight: 600;
     text-transform: uppercase;
     padding: 10px 15px;
+    margin-left: 2px;
 }
+
+
 header ul li a:hover{
-    border-bottom: 2px solid #ff7200;
-    color: #ae9e91;
+    color: #fff;
+    background: #0c0c0c7d;
+    border-radius: 20px;
+}
+
+header a:active{
+    background-color: #04AA6D !important;
 }
 
 header .menu{
     font-size: 2.5em;
     display: none;
 }
-@media(max-width:1000px){
-.search-box button{
-    position: absolute;
-}
-    header ul{
-    position: fixed;
-    top:100px;
-    right: -100%;
-    background: rgba(0,0,0,0.5);
-    height: calc(100vh - 100px);
-    width:50%;
-    flex-direction: column;
-    align-items: center;
-    transition: right 0.5s linear;
-}
-     
-header .menu{
-    display: block;
-    width:100px;
-    text-align: center;
-}
-#chk1:checked ~ ul{
-    right: 0;    
-}
+
+#products{
+    background-color: #04AA6D;
+    border-radius: 4px;
 }
 
+/* Log-In form */
 .btn {
-    position: absolute;
     top: 45px;
-    right: 0;
     transform: translate(-50%, -50%);
     padding: 10px;
-    border-radius: 5px;
+    border:none;
     font-size: 0.9em;
     font-weight: 700;
-    background-color: #ff7200;
+    background-color: transparent;
+    margin-top: 30px;
+    color: #fff;
+    margin-right: 20px;
+    cursor: pointer;
 }
   
 .overlay {
@@ -142,48 +101,49 @@ header .menu{
     z-index: 100;
 }
   
-  .overlay.open {
+.overlay.open {
     display: flex;
     animation: show-overlay 0.5s;
-  }
-  
-  @keyframes show-overlay {
+}
+    /* keyframes are used for animation */
+@keyframes show-overlay { 
     0% {
       opacity: 0;
     }
     100% {
       opacity: 1;
     }
-  }
+}
   
-  .login {
+.login {
     padding: 50px 25px;
     background: white;
     border-radius: 10px;
     margin-top: 40%;
-  }
+}
   
-  .header {
+.header {
     position: relative;
-  }
+}
   
-  .header h1 {
+.header h1 {
     text-align: center;
     text-transform: uppercase;
     color: #000051;
     padding-bottom: 7px;
     border-bottom: 2px solid #000051;
-  }
+}
   
-  .header i {
+.header i {
     position: absolute;
     top: 0;
     right: 0;
     font-size: 20px;
     color: #000051;
-  }
+    cursor: pointer;
+}
   
-  .body .form input {
+.body .form input {
     display: block;
     padding: 10px;
     margin: 25px 10px;
@@ -191,20 +151,20 @@ header .menu{
     border: solid #000051 1px;
     color: #000051;
     transition: 0.4s;
-  }
+}
   
-  .body .form input:focus {
+.body .form input:focus {
     border-color: #534bae;
-  }
+}
   
-  .footer {
+.footer {
     position: relative;
     height: 40px;
     width: 100%;
-  }
-  
-  .footer button {
-    position: absolute;
+}
+/* position absolute - element relative to its parent's position and changing the layout around it. */
+.footer button {
+    position: absolute; 
     padding: 10px;
     min-width: 100px;
     left: 50%;
@@ -214,14 +174,12 @@ header .menu{
     color: white;
     cursor: pointer;
     transition: 0.4s;
-  }
+}
   
-  .footer button:hover {
+.footer button:hover {
     background: #534bae;
-  }
-
-
-
+}
+/* navigation end */
 
 .container2{
     justify-content: center;
@@ -347,6 +305,13 @@ header .menu{
     width: 100%;
 }
 
+#product---table h4 
+{
+    font-weight: 500;
+    padding: 0 4px;
+    font-size: 1.2vw;
+}
+
 #product---table span 
 {
     color: #0954BD;
@@ -459,3 +424,198 @@ header .menu{
     border-radius: 2px;
     color: white;
 }
+
+#sub--total
+{
+    width: 100%;
+}
+
+#sub--total tr td h5
+{
+    text-align: right;
+    font-size: 1.2vw;
+}
+
+#sub--total tr td h5 span
+{
+    color: red !important;
+}
+
+#table---container h4 
+{
+    font-size: 1.4vw;
+    color: gray;
+    text-align: center;
+}
+
+#payment--table
+{
+    width: 100%;
+    text-align: center;
+}
+
+#payment--table button 
+{
+    padding: 8px 32px;
+    font-size: 1.2vw;
+    text-align: center;
+    background-color: #DE6E07;
+    border-radius: 4px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#payment--table button:hover
+{
+    background-color: #a35a17;
+}
+
+#customer_payment_table
+{
+    width: 100%;
+}
+
+#customer_payment_table td 
+{
+    vertical-align: middle;
+}
+
+#customer_payment_table input
+{
+    padding: 4px 8px;
+}
+
+#customer_payment_table input:focus-visible
+{
+    outline: none;
+}
+
+#place--order--table
+{
+    width: 100%;
+    margin-top: 32px;
+}
+
+#place--order--table tr td
+{
+    border: 1px dashed gray;
+    padding: 32px;
+}
+
+#place--order--table h4
+{
+    text-align: center;
+    font-size: 2vw;
+}
+
+#but--now--table
+{
+    width: 100%;
+}
+
+#but--now--table tr td
+{
+    border: 1px dashed black;
+    padding: 8px;
+    text-align: center;
+}
+
+#but--now--table img
+{
+    width: 100%;
+}
+
+#but--now--table span
+{
+    font-size: 1vw;
+}
+
+#qty---text
+{
+    padding: 12px;
+}
+
+#but--now--table button
+{
+    padding: 4px 12px;
+    border: none;
+    background-color: #DE6E07;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#tender--payment--table 
+{
+    width: 100%;
+}
+
+#tender--payment--table td 
+{
+    vertical-align: middle;
+}
+
+#tender--payment--table  input 
+{
+    padding: 4px 8px;
+}
+
+#tender--payment--table  input:focus-visible
+{
+    outline: none;
+}
+
+#place---order----table
+{
+    width: 100%;
+}
+
+#place---order----table button
+{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #528107;
+    color: white;
+    font-size: 1.2vw;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#place---order----table button:hover
+{
+    background-color: #4b710e;
+}
+
+#total---amount 
+{
+    width: 100%;
+}
+
+#total---amount h4 
+{
+    text-align: right;
+}
+
+.sort{
+    margin: 20px 13px;
+    color: #000;
+    font-size: 20px;
+    font-family: 'Times New Roman', serif;
+}
+
+.sort option{
+    margin: 20px;
+}
+
+.sort-in{
+    padding: 5px 10px;
+    margin: 5px 10px;
+    border-radius: 2px;
+    border: 2px solid #191919;
+    border: 0.6px solid gray;
+    font-size: 1vw;
+}
+

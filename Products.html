@@ -9,301 +9,824 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="css/Productsstyles.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/sweetalert.min.css">
+    <title>Product</title>
 </head>
 <body>
-    <!-- NAVIGATION -->
-    <header>
-        <input type ="checkbox" name ="" id ="chk1">
-        <input type="hidden" id="username" value="alexa">
-        <input type="hidden" id="password" value="alexathegreat">
-        <div class="logo"><h1>ADANE</h1></div>
-            <div class="search-box">
-                <form>
-                    <input type ="text" name ="search" id ="srch" placeholder="Search">
-                    <button type ="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
+    <!-- data- -> is a built-in attribute/method that support in javascript jquery -->
+        <!-- navigation start -->
+        <header>
+            <div class="logo"><h1>ADANE</h1></div> <!-- logo -->
             <ul>
-                <li><a href="Homepage.html">Home</a></li>
-                <li><a href="Products.html">Products</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="Contact Us.html">Contact Us</a></li>
-                <li><a href="HotonSale.html">Hot on Sale</a></li>
+                <li><a href="Homepage.html" >Home</a></li> <!--webpage-->
+                <li><a href="Products.html" id="products">Products</a></li> <!--webpage-->
+                <li><a href="aboutus.html">About Us</a></li> <!--webpage-->
+                <li><a href="Contact Us.html">Contact Us</a></li> <!--webpage-->
+                <li><a href="HotonSale.html">Hot on Sale</a></li> <!--webpage-->
             </ul>
+    
+            <!-- Log-In form -->
+            <input type="hidden" id="username" value="alexa"> <!--username-->
+            <input type="hidden" id="password" value="alexathegreat"> <!--password-->
+            <button class="btn" onclick="toggleLogin()">Log In</button> <!--btn is for button-->
+                <div id="overlay" class="overlay"> <!--inside of the LogIn button-->
+                  <div class="login">   
+                    <div class="header">
+                      <h1>Login</h1> <!--inside of a form --> 
+                      <i class="fas fa-times" onclick="toggleLogin()"></i> <!--i-fas fa-times is a fonts/logo from font-awesome-->
+                    </div>
+    
+                    <div class="body">
+                      <form action="#" class="form">
+                        <input type="text" placeholder="Username" class="username" />  
+                        <input type="password" placeholder="Password" class="password" />
+                      </form>
+                    </div>
+    
+                    <div class="footer">
+                      <button id="login_btn">Login</button> <!--this is the log-in button for the inside-form -->
+                    </div>
+                  </div>
+                </div>
+        </header>
+        <!-- navigation end -->
 
-            <button class="btn" onclick="toggleLogin()">Log In</button>
-            <div class="overlay">
-              <div class="login">
-                <div class="header">
-                  <h1>Login</h1>
-                  <i class="fas fa-times" onclick="toggleLogin()"></i>
-                </div>
-                <div class="body">
-                  <form action="#" class="form">
-                    <input type="text" placeholder="Username" class="username" />
-                    <input type="password" placeholder="Password" class="password" />
-                  </form>
-                </div>
-                <div class="footer">
-                  <button id="login_btn">Login</button>
-                </div>
-              </div>
-            </div>
-    </header>
+    <div class="sort">
+        <label>Please choose an item</label>
+        <select id="product-option" onchange="select();" class="sort-in">
+            <option>Choose Category</option>
+            <option value="0">Best Seller Items</option>
+            <option value="1">Laptops</option>
+            <option value="2">Desktops</option>
+            <option value="3">Monitors</option>
+            <option value="4">Accessoriess</option>
+        </select> <br />
+    </div>
     
     <div class="main---container">
         <main id="product---container">
             <table id="product---table">
-                <tr>
-                    <td>
-                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
-                        <span>$999999.00</span><br />
-                        
-                        <button class="buyNow">Buy Now</button>
-                        <button class="addToCart" data-id="1" data-name="Laptop1">Add to Cart</button>
-                    </td>
-                    <td>
-                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
-                        <span>$999999.00</span><br />
-                        
-                        <button class="buyNow">Buy Now</button>
-                        <button class="addToCart" data-id="2" data-name="Laptop2">Add to Cart</button>
-                    </td>
-                    <td>
-                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
-                        <span>$999999.00</span><br />
-                        
-                        <button class="buyNow">Buy Now</button>
-                        <button class="addToCart" data-id="3" data-name="Laptop3">Add to Cart</button>
-                    </td>
-                    <td>
-                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
-                        <span>$999999.00</span><br />
-                        
-                        <button class="buyNow">Buy Now</button>
-                        <button class="addToCart" data-id="4" data-name="Laptop4">Add to Cart</button>
-                    </td>
+                <tr id="item-row">
+                    <!-- blank -->
                 </tr>
 
-                <tr>
+                <tr id="best-seller-items">
                     <td>
-                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
-                        <span>$999999.00</span><br />
+                        <img class="img-thumbnail" src="images/acces1.jpg" alt="Product Image" />
+                        <h4>Access 1</h4><br />
+                        <span>$500.00</span><br />
                         
-                        <button class="buyNow">Buy Now</button>
-                        <button class="addToCart" data-id="5" data-name="Laptop5">Add to Cart</button>
+                        <button class="buyNow" data-image="acces1.jpg" data-id="13" data-name="Access 1" data-model="Acer" data-price="500">Buy Now</button>
+                        <button class="addToCart" data-image="acces1.jpg" data-id="13" data-price="500" data-name="Access 1">Add to Cart</button>
                     </td>
                     <td>
-                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
-                        <span>$999999.00</span><br />
+                        <img class="img-thumbnail" src="images/acces2.jpg" alt="Product Image" />
+                        <h4>Access 2</h4><br />
+                        <span>$200.00</span><br />
                         
-                        <button class="buyNow">Buy Now</button>
-                        <button class="addToCart" data-id="6" data-name="Laptop6">Add to Cart</button>
-                    </td>
-                    <td>
-                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
-                        <span>$999999.00</span><br />
-                        
-                        <button class="buyNow">Buy Now</button>
-                        <button class="addToCart" data-id="7" data-name="Laptop7">Add to Cart</button>
-                    </td>
-                    <td>
-                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
-                        <span>$999999.00</span><br />
-                        
-                        <button class="buyNow">Buy Now</button>
-                        <button class="addToCart" data-id="8" data-name="Laptop8">Add to Cart</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
-                        <span>$999999.00</span><br />
-                        
-                        <button class="buyNow">Buy Now</button>
-                        <button class="addToCart" data-id="9" data-name="Laptop9">Add to Cart</button>
-                    </td>
-                    <td>
-                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
-                        <span>$999999.00</span><br />
-                        
-                        <button class="buyNow">Buy Now</button>
-                        <button class="addToCart" data-id="10" data-name="Laptop10">Add to Cart</button>
-                    </td>
-                    <td>
-                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
-                        <span>$999999.00</span><br />
-                        
-                        <button class="buyNow">Buy Now</button>
-                        <button class="addToCart" data-id="11" data-name="Laptop11">Add to Cart</button>
-                    </td>
-                    <td>
-                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
-                        <span>$999999.00</span><br />
-                        
-                        <button class="buyNow">Buy Now</button>
-                        <button class="addToCart" data-id="12" data-name="Laptop12">Add to Cart</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
-                        <span>$999999.00</span><br />
-                        
-                        <button class="buyNow">Buy Now</button>
-                        <button class="addToCart" data-id="13" data-name="Laptop13">Add to Cart</button>
-                    </td>
-                    <td>
-                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
-                        <span>$999999.00</span><br />
-                        
-                        <button class="buyNow">Buy Now</button>
-                        <button class="addToCart" data-id="14" data-name="Laptop14">Add to Cart</button>
-                    </td>
-                    <td>
-                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
-                        <span>$999999.00</span><br />
-                        
-                        <button class="buyNow">Buy Now</button>
-                        <button class="addToCart" data-id="15" data-name="Laptop15">Add to Cart</button>
-                    </td>
-                    <td>
-                        <img class="img-thumbnail" src="images/lptop.png" alt="Product Image" />
-                        <span>$999999.00</span><br />
-                        
-                        <button class="buyNow">Buy Now</button>
-                        <button class="addToCart" data-id="16" data-name="Laptop16">Add to Cart</button>
+                        <button class="buyNow" data-image="acces2.jpg" data-id="14" data-name="Access 2" data-model="Acer" data-price="200">Buy Now</button>
+                        <button class="addToCart" data-image="acces2.jpg" data-id="14" data-price="200" data-name="Access 2">Add to Cart</button>
                     </td>
                 </tr>
             </table>
         </main>
-        <aside id="table---container">
-            <table id="product---append---table">
+        <aside id="table---container"> <!--right side box-->
+            <input type="hidden" id="count" value="0" />
+            <h4>Order List</h4>
+            <table id="place--order--table">
                 <tr>
-                    <td class="table---data--image">
-                        <img class="table-image-name" src="images/lptop.png" alt="Table Image" />
-                    </td>
-                    <td class="table--data--title">
-                        <span class="product--quantity">Quantity: <button class="subtractBtn">-</button><span class="product--quantit--number">3</span><button class="addBtn">+</button></span><br /><br />
-                        <span class="product--price">Total Price: <span class="price-text">$99.00</span></span><br />
-                        <span class="product--name">Product Name: Laptop</span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="table---data--image">
-                        <img class="table-image-name" src="images/lptop.png" alt="Table Image" />
-                    </td>
-                    <td class="table--data--title">
-                        <span class="product--quantity">Quantity: <button class="subtractBtn">-</button><span class="product--quantit--number">3</span><button class="addBtn">+</button></span><br /><br />
-                        <span class="product--price">Total Price: <span class="price-text">$99.00</span></span><br />
-                        <span class="product--name">Product Name: Laptop</span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="table---data--image">
-                        <img class="table-image-name" src="images/lptop.png" alt="Table Image" />
-                    </td>
-                    <td class="table--data--title">
-                        <span class="product--quantity">Quantity: <button class="subtractBtn">-</button><span class="product--quantit--number">3</span><button class="addBtn">+</button></span><br /><br />
-                        <span class="product--price">Total Price: <span class="price-text">$99.00</span></span><br />
-                        <span class="product--name">Product Name: Laptop</span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="table---data--image">
-                        <img class="table-image-name" src="images/lptop.png" alt="Table Image" />
-                    </td>
-                    <td class="table--data--title">
-                        <span class="product--quantity">Quantity: <button class="subtractBtn">-</button><span class="product--quantit--number">3</span><button class="addBtn">+</button></span><br /><br />
-                        <span class="product--price">Total Price: <span class="price-text">$99.00</span></span><br />
-                        <span class="product--name">Product Name: Laptop</span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="table---data--image">
-                        <img class="table-image-name" src="images/lptop.png" alt="Table Image" />
-                    </td>
-                    <td class="table--data--title">
-                        <span class="product--quantity">Quantity: <button class="subtractBtn">-</button><span class="product--quantit--number">3</span><button class="addBtn">+</button></span><br /><br />
-                        <span class="product--price">Total Price: <span class="price-text">$99.00</span></span><br />
-                        <span class="product--name">Product Name: Laptop</span>
-                    </td>
+                    <td><h4>Place your order here...</h4></td>
                 </tr>
             </table>
+            <div id="add--to--cart--tables">
+                <table id="product---append---table">
+                    
+                </table><br />
+                <table id="sub--total">
+    
+                </table><br /><br />
+                <table id="customer_payment_table"> 
+                    
+                </table><br />
+                <table id="payment--table">
+                    
+                </table>
+            </div>
+
+            <div id="buy--tables">
+                <table id="but--now--table">
+                </table><br />
+                <table id="total---amount">
+                    
+                </table><br />
+                <table id="tender--payment--table">
+                    
+                </table><br /><br />
+                <table id="place---order----table">
+                    
+                </table>
+            </div>
         </aside>
     </div>
 
-
-
-<!-- javaScipt not yet done-->
-
-
-
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
     <script>
-        // LOGIN FORM
+        // log in form
+        function toggleLogin() {
+          document.querySelector(".overlay").classList.toggle("open");
+        }
 
-        const loginbutton = document.getElementById('login_btn'); 
-        loginbutton.addEventListener('click', e => { //addEventListener method/ function sa javascript nga maclick sa isa ka button
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-
-            var input_username = document.getElementsByClassName('username')[0].value;
-            var input_password = document.getElementsByClassName('password')[0].value;
-            
-            if(input_username == username && input_password == password)
+        // onclick but inside the onclick are the proccess
+        $(document).on('click', '.addToCart', function() {  // $ is one of the javascript identifiers 
+            var id = $(this).data('id'); // (this) is a keyword that refers to an object  or in other terms/ statement, (this) is invoked(used or called)
+            var name = $(this).data('name'); // var, let, const is a variable or container.
+            var price = $(this).data('price');
+            var image = $(this).data('image');
+                //kana sila tanan kay gi sud ug variable then sa sud sa variable gi tawag using(this) ang data sa 'id' , 'name', 'price' ug 'image'
+            var count = $('#count').val(); // same rasad ni siya sa babaw which is gi tawag ta difference lang is ang gi tawag niya is value. .val() pero if mag use ug javascript native .value na ang naka butang.
+            //var count - hidden input
+            // condtions
+            if(count == 0) //if count is == 0 dapat ang mo gawas is kaning 
             {
-                var overlay = document.getElementById('overlay');
-                overlay.classList.remove("open");
-                overlay.classList.add("close");
+                // table row elements
+                var sub_total_row = `<tr id="table-row-subtotal">
+                                        <td>
+                                            <input type="hidden" class="append_subtotal_${id} subtotal" value="" />
+                                            <h5>Sub Total: $<span class="price__subtotal__text_${id} overall_subtotal">0</span><span></span></h5>
+                                        </td>
+                                    </tr>`;
 
-                var url = "https://www.google.com/"; //REDIRECT TO PRODUCT
-                window.open(url);
+                // appending the new table name subtotal 
+                $('#sub--total').html(sub_total_row);
+
+                var payment_table = `<tr id="payment_table_row"> 
+                                        <td>
+                                            <button onclick="payNow();">Place Order</button>
+                                        </td>
+                                    </tr>`;
+
+                $('#payment--table').html(payment_table);
+
+                var tender_row = `<tr id="tender_row_amount">
+                                        <td>
+                                            <input type="hidden" id="customer-change" value="0" />
+                                            <span>Amount Tendered: $ <input type="number" id="tendered_value" onkeyup="customerChange();" /></span><br /><br />
+                                            <span>Customer Change: $<span class="display-change">00</span>.00</span>
+                                        </td>
+                                    </tr>`;
+                
+                $('#customer_payment_table').html(tender_row);
+                $('#buy--tables').html('');
+            } 
+            $('#count').val(1);
+
+            if($(`.append_id_${id}`).length == 0)
+            {
+                // table row elements
+                var product_table_row = `<tr id="table---row_${id}">
+                                            <td class="table---data--image">
+                                                <img class="table-image-name" src="images/${image}" alt="Table Image" />
+                                            </td>
+                                            <td class="table--data--title">
+                                                <input type="hidden" class="append_id_${id}" value="${id}" />
+                                                <input type="hidden" class="append_qty_${id}" value="1" />
+                                                <input type="hidden" class="price-text_${id}" value="${price}" />
+                                                <span class="product--quantity">Quantity: <button onclick="subtractBtn(${id}, ${price})">-</button><span class="product--quantit--number_${id}">1</span><button onclick="addBtn(${id}, ${price});">+</button></span><br /><br />
+                                                <span class="product--price">Total Price: $<span class="price--title---text_${id}">${price}</span></span><br />
+                                                <span class="product--name">Product Name: ${name}</span>
+                                            </td>
+                                        </tr>`;
+
+                // append the html elements in the table
+                $('#product---append---table').append(product_table_row);
+
+                // getting the sub total hidden value
+                var appended_subtotal = $(`.subtotal`).val();
+                var sub_total = +appended_subtotal + +price;
+                
+                // updating the subtotal text display in order list
+                $(`.overall_subtotal`).text(sub_total);
+
+                // updating the overall subtotal hidden value
+                $(`.subtotal`).val(sub_total);
+
+                $('#place--order--table').html('');
             }
             else
             {
-                alert(`You can't go to google! Please try again.`);
+                // getting the quantity hidden value
+                var appended_qty = $(`.append_qty_${id}`).val();
+                var total_qty = + appended_qty + 1;
+                
+                // update the quantity
+                $(`.product--quantit--number_${id}`).text(total_qty);
+
+                // update the hidden quantity value
+                $(`.append_qty_${id}`).val(total_qty);
+                
+                // getting the price hidden value
+                var appended_price = $(`.price-text_${id}`).val();
+                var added_price = +appended_price + +price;
+
+                // updating the text price display value in order list
+                $(`.price-text_${id}`).val(added_price);
+                // updating the price hidden value in order list
+                $(`.price--title---text_${id}`).text(added_price);
+
+                // getting the sub total hidden value
+                var appended_subtotal = $(`.subtotal`).val();
+                var sub_total = +appended_subtotal + +price;
+
+                // updating the subtotal text display in order list
+                $(`.overall_subtotal`).text(sub_total);
+                // updating the overall subtotal hidden value
+                $(`.subtotal`).val(sub_total);
             }
-        })
-        
-        // LOG IN FORM
-        // function toggleLogin() {
-        //   document.querySelector(".overlay").classList.toggle("open");
-        // }
+        });
 
-        // const add_to_cart = document.querySelectorAll('.addToCart');
-        // const buy_now = document.querySelectorAll('.buyNow');
+        // add order
+        function addBtn(id, price) {
+            // getting the quantity hidden value
+            var appended_qty = $(`.append_qty_${id}`).val();
+            var total_qty = + appended_qty + 1;
 
-        // let count = 1;
-
-        // add_to_cart.forEach(el => el.addEventListener('click', event => {
-        //     var id = event.target.getAttribute("data-id");
+            // getting the price hidden value in order list
+            var appended_price = $(`.price-text_${id}`).val();
+            var added_price = + appended_price + price;
             
+            // update the quantity text between the operators sign
+            $(`.product--quantit--number_${id}`).text(total_qty);
 
-        //     var product_table_row = `<tr>
-        //                                 <td class="table---data--image">
-        //                                     <img class="table-image-name" src="images/lptop.png" alt="Table Image" />
-        //                                 </td>
-        //                                 <td class="table--data--title">
-        //                                     <input type="hidden" class="append_id_${id}" value="${id}" />
-        //                                     <span class="product--quantity">Quantity: <button class="subtractBtn">-</button><span class="product--quantit--number">${count++}</span><button class="addBtn">+</button></span><br /><br />
-        //                                     <span class="product--price">Total Price: <span class="price-text">$99.00</span></span><br />
-        //                                     <span class="product--name">Product Name: Laptop</span>
-        //                                 </td>
-        //                             </tr>`;
+            // update the hidden quantity value
+            $(`.append_qty_${id}`).val(total_qty);
 
-        //     document.getElementById('product---append---table').innerHTML += product_table_row;
-        //     var appended_hidden_id = document.getElementsByClassName(`append_id_${id}`)[0].value;
+            // update the hidden price value
+            $(`.price-text_${id}`).val(added_price);
 
-        //     // table_body.append(product_table_row)
-        // }));
+            // update the price title
+            $(`.price--title---text_${id}`).text(added_price);
+
+            // getting the subtotal hidden value 
+            var appended_subtotal = $(`.subtotal`).val();
+            var sub_total = +appended_subtotal + +price;
+
+            // updating the subtotal text display in order list
+            $(`.overall_subtotal`).text(sub_total);
+            // updating the overall subtotal hidden value
+            $(`.subtotal`).val(sub_total);
+        }
+
+        // subtract order
+        function subtractBtn(id, price) {
+            // getting appended quantity hidden value
+            var appended_qty = $(`.append_qty_${id}`).val();
+            var total_qty = appended_qty - 1;
+            
+            if(total_qty < 1)
+            {
+                document.getElementById(`table---row_`+id).remove();
+
+                // getting appended subtotal hidden value
+                var appended_subtotal = $(`.subtotal`).val();
+                var sub_total = appended_subtotal - price;
+
+                // updating the sub total text display in order list
+                $(`.overall_subtotal`).text(sub_total);
+                // updating the overall subtotal hidden value in order list
+                $(`.subtotal`)[0].value = sub_total;
+            }
+            else
+            {
+                // updating the text quantity in the order list
+                $(`.product--quantit--number_${id}`).text(total_qty);
+                // updating the text hidden value in order list
+                $(`.append_qty_${id}`).val(total_qty);
+
+                // getting appended price hidden value
+                var appended_price = $(`.price-text_${id}`).val();
+                var added_price = appended_price - price;
+
+                // update the hidden price value
+                $(`.price-text_${id}`).val(added_price);
+
+                // update the price title
+                $(`.price--title---text_${id}`).text(added_price);
+
+                // getting the appended price hidden value
+                var appended_subtotal = $(`.subtotal`).val();
+                var sub_total = appended_subtotal - price;
+
+                // updating the subtotal price text display
+                $(`.overall_subtotal`).text(sub_total);
+                // updating the sub total hidden value
+                $(`.subtotal`).val(sub_total);
+            }
+
+            // getting overall subtotal
+            var overall_subtotal = $('.subtotal').val();
+
+            if(overall_subtotal <= 0)
+            {
+                // remove the sub total table if it is 0
+                $('#table-row-subtotal').remove();
+                $('#payment_table_row').remove();
+                $('#tender_row_amount').remove();
+                $('#count').val(0);
+
+                $('#place--order--table').html(placeTableRow());
+            }
+        }
+
+        function customerChange() {
+            var tendered_amount = $('#tendered_value').val();
+            var customer_change = $('#customer-change').val();
+            var sub_total = $('.subtotal').val();
+            
+            var calculate = tendered_amount - sub_total;
+
+            $('.display-change').text(calculate);
+            $('#customer-change').val(calculate);
+        }
+
+        function payNow()
+        {
+            var customer_change = $('#customer-change').val();
+            if(customer_change >= 0)
+            {
+                Swal.fire({ //this is use for processing the order 
+                    icon: 'warning',
+                    toast: true,
+                    title: 'Payment proccessing! Please wait for a minute.',
+                    position: 'top-end',
+                    timer: 3000,
+                    timerProgressBar: true,
+                    showConfirmButton: false
+                }).then(function() {
+                    Swal.fire({
+                        icon: 'success',
+                        toast: true,
+                        title: 'Order has been successfully proccessed and ready to serve/deliver.',
+                        position: 'top-end',
+                        timer: 2000,
+                        timerProgressBar: true,
+                        showConfirmButton: false
+                    });
+                    $('#product---append---table').html('');
+                    $('#payment--table').html('');
+                    $('#customer_payment_table').html('');
+                    $('#sub--total').html('');
+                    $('#sub--total').html('');
+                    $('#place--order--table').html(placeTableRow());
+                    $('#buy--tables').html(buyTables());
+                    $('#count').val(0);
+                })
+            }
+        }
+        
+        function placeTableRow()
+        {
+            var palce_table_row = `<tr>
+                                        <td><h4>Place your order here...</h4></td>
+                                    </tr>`;
+
+            return palce_table_row;
+        }
+
+        function addOrder(price) {
+            var product_qty = $('#product--qty').val();
+            var product_price = $('#product--price').val();
+            var calculate = +product_price + +price
+
+            $('#qty---text').text(+product_qty + 1);
+            $('#product--qty').val(+product_qty + 1);
+            $('#product--price').val(calculate);
+            $('#product---text').text(calculate);
+
+            $('#total---amount--value').val(calculate);
+            $('#display--amount').html(calculate);
+        }
+
+        function subtractOrder(price) {
+            var product_qty = $('#product--qty').val();
+            var product_price = $('#product--price').val();
+            var calculate = product_price - price
+            
+            $('#qty---text').text(product_qty - 1);
+            $('#product--qty').val(product_qty - 1);
+            $('#product--price').val(calculate);
+            $('#product---text').text(calculate);
+
+            $('#total---amount--value').val(calculate);
+            $('#display--amount').html(calculate);
+
+            if(product_qty <= 1)
+            {
+                $('#but--now--table').html('');
+            }
+        }
+
+        function cashTendered()
+        {
+            var cash_tendered = $('#cash----tendered').val();
+            var total_amount = $('#total---amount--value').val();
+            var calculate = cash_tendered - total_amount;
+            
+            $('#display--cs-change').text(calculate);
+            $('#customer__change__value').val(calculate);
+        }
+
+        function placeOrder()
+        {
+            var customer_change = $('#customer__change__value').val();
+            if(customer_change >= 0)
+            {
+                Swal.fire({
+                    icon: 'warning',
+                    toast: true,
+                    title: 'Payment proccessing! Please wait for a minute.',
+                    position: 'top-end',
+                    timer: 3000,
+                    timerProgressBar: true,
+                    showConfirmButton: false
+                }).then(function() {
+                    Swal.fire({
+                        icon: 'success',
+                        toast: true,
+                        title: 'Order has been successfully proccessed and ready to serve/deliver.',
+                        position: 'top-end',
+                        timer: 2000,
+                        timerProgressBar: true,
+                        showConfirmButton: false
+                    });
+
+                    $('#place---order----table').html('');
+                    $('#tender--payment--table').html('');
+                    $('#total---amount').html('');
+                    $('#but--now--table').html('');
+                    $('#place--order--table').html(placeTableRow());
+                    $('#add--to--cart--tables').html(addToCartTables());
+                    $('#buy--tables').html(buyTables());
+                })
+            }
+        }
+
+        function addToCartTables()
+        {
+            var tables = `<table id="product---append---table">
+                    
+                            </table><br />
+                            <table id="sub--total">
+                
+                            </table><br /><br />
+                            <table id="customer_payment_table"> 
+                                
+                            </table><br />
+                            <table id="payment--table">
+                                
+                            </table>`;
+
+            return tables;
+        }
+
+        function buyTables()
+        {
+            var tables = `<table id="but--now--table">
+                            </table><br />
+                            <table id="total---amount">
+                                
+                            </table><br />
+                            <table id="tender--payment--table">
+                                
+                            </table><br /><br />
+                            <table id="place---order----table">
+                                
+                            </table>`;
+            return tables;
+        }
+
+        function select()
+        {
+            var id = document.getElementById('product-option').value;
+
+            if(id == 1) //laptop - products
+            {
+                var laptop_rows = `<tr>
+                                <td>
+                                    <img class="img-thumbnail" src="images/lp1.jpg" alt="Product Image" />
+                                    <h4>Swift 5 SF514-56T-797T Notebook</h4><br />
+                                    <span>$1,499.99</span><br />
+                                    
+                                    <button class="buyNow" data-id="56" data-name="Swift 5 SF514-56T-797T Notebook" data-model="Acer" data-price="1499.99" data-image="lp1.jpg">Buy Now</button>
+                                    <button class="addToCart" data-id="56" data-price="1499.99" data-name="Swift 5 SF514-56T-797T Notebook" data-image="lp1.jpg">Add to Cart</button>
+                                </td>
+                                <td>
+                                    <img class="img-thumbnail" src="images/lp2.jpg" alt="Product Image" />
+                                    <h4>Swift 5 SF514-56T-797T Notebook</h4><br />
+                                    <span>1,499.99</span><br />
+                                    
+                                    <button class="buyNow" data-id="57" data-name="Swift 5 SF514-56T-797T Notebook" data-model="Acer" data-price="1499.99" data-image="lp2.jpg">Buy Now</button>
+                                    <button class="addToCart" data-id="57" data-price="1499.99" data-name="Swift 5 SF514-56T-797T Notebook" data-image="lp2.jpg">Add to Cart</button>
+                                </td>
+                                <td>
+                                    <img class="img-thumbnail" src="images/lp3.jpg" alt="Product Image" />
+                                    <h4>Swift Edge SFA16-41-R6YS Notebook</h4><br />
+                                    <span>$1,499.99</span><br />
+                                    
+                                    <button class="buyNow" data-id="58" data-name="Swift Edge SFA16-41-R6YS Notebook" data-model="Acer" data-price="1499.99" data-image="lp3.jpg">Buy Now</button>
+                                    <button class="addToCart" data-id="58" data-price="1499.99" data-name="Swift Edge SFA16-41-R6YS Notebook" data-image="lp3.jpg">Add to Cart</button>
+                                </td>
+                                </tr>
+
+                                <tr>
+                                <td>
+                                    <img class="img-thumbnail" src="images/lp4.jpg" alt="Product Image" />
+                                    <h4>Nitro 5 AN515-57-73DH Gaming Notebook</h4><br />
+                                    <span>$2,499.99</span><br />
+                                    
+                                    <button class="buyNow" data-id="59" data-name="Nitro 5 AN515-57-73DH Gaming Notebook" data-model="Acer" data-price="2499.99" data-image="lp4.jpg">Buy Now</button>
+                                    <button class="addToCart" data-id="59" data-price="2499.99" data-name="Nitro 5 AN515-57-73DH Gaming Notebook" data-image="lp4.jpg">Add to Cart</button>
+                                </td>
+                                <td>
+                                    <img class="img-thumbnail" src="images/lp5.jpg" alt="Product Image" />
+                                    <h4>Aspire 5 A515-56-32DK Notebook</h4><br />
+                                    <span>$379.99</span><br />
+                                    
+                                    <button class="buyNow" data-id="60" data-name="Aspire 5 A515-56-32DK Notebook" data-model="Acer" data-price="379.99" data-image="lp5.jpg">Buy Now</button>
+                                    <button class="addToCart" data-id="60" data-price="379.99" data-name="Aspire 5 A515-56-32DK Notebook" data-image="lp5.jpg">Add to Cart</button>
+                                </td>
+                                <td>
+                                    <img class="img-thumbnail" src="images/lp6.jpg" alt="Product Image" />
+                                    <h4>Spin 5 SP514-51N-70LZ 2 in 1 Notebook</h4><br />
+                                    <span>$1,349.99</span><br />
+                                    
+                                    <button class="buyNow" data-id="61" data-name="Spin 5 SP514-51N-70LZ 2 in 1 Notebook" data-model="Acer" data-price="1349.99" data-image="lp6.jpg">Buy Now</button>
+                                    <button class="addToCart" data-id="61" data-price="1349.99" data-name="Spin 5 SP514-51N-70LZ 2 in 1 Notebook" data-image="lp6.jpg">Add to Cart</button>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                    <img class="img-thumbnail" src="images/lp7.jpg" alt="Product Image" />
+                                    <h4>TravelMate P4 TMP414-41-R854 Notebook</h4><br />
+                                    <span>$1,049.99</span><br />
+                                    
+                                    <button class="buyNow" data-id="62" data-name="TravelMate P4 TMP414-41-R854 Notebook" data-model="Acer" data-price="1049.99" data-image="lp7.jpg">Buy Now</button>
+                                    <button class="addToCart" data-id="62" data-price="1049.99" data-name="TravelMate P4 TMP414-41-R854 Notebook" data-image="lp7.jpg">Add to Cart</button>
+                                </td>
+                                <td>
+                                    <img class="img-thumbnail" src="images/lp8.jpg" alt="Product Image" />
+                                    <h4>TravelMate P6 TMP614-52-52NE Notebook</h4><br />
+                                    <span>$1,249.99</span><br />
+                                    
+                                    <button class="buyNow" data-id="63" data-name="TravelMate P6 TMP614-52-52NE Notebook" data-model="Acer" data-price="1249.99" data-image="lp8.jpg">Buy Now</button>
+                                    <button class="addToCart" data-id="63" data-price="1249.99" data-name="TravelMate P6 TMP614-52-52NE Notebook" data-image="lp8.jpg">Add to Cart</button>
+                                </td>
+                                <td>
+                                    <img class="img-thumbnail" src="images/lp9.jpg" alt="Product Image" />
+                                    <h4>ENDURO Urban N3 EUN314A-51W-73PW Notebook</h4><br />
+                                    <span>$1,019.99</span><br />
+                                    
+                                    <button class="buyNow" data-id="64" data-name="ENDURO Urban N3 EUN314A-51W-73PW Notebook" data-model="Acer" data-price="1019.99" data-image="lp9.jpg">Buy Now</button>
+                                    <button class="addToCart" data-id="64" data-price="1019.99" data-name="ENDURO Urban N3 EUN314A-51W-73PW Notebook" data-image="lp9.jpg">Add to Cart</button>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                    <img class="img-thumbnail" src="images/lp10.jpg" alt="Product Image" />
+                                    <h4>TravelMate P2 TMP215-52-7299 Notebook</h4><br />
+                                    <span>$829.99</span><br />
+                                    
+                                    <button class="buyNow" data-id="65" data-name="TravelMate P2 TMP215-52-7299 Notebook" data-model="Acer" data-price="829.99" data-image="lp10.jpg">Buy Now</button>
+                                    <button class="addToCart" data-id="65" data-price="829.99" data-name="TravelMate P2 TMP215-52-7299 Notebook" data-image="lp10.jpg">Add to Cart</button>
+                                </td>
+                                <td>
+                                    <img class="img-thumbnail" src="images/lp11.jpg" alt="Product Image" />
+                                    <h4>ENDURO N3 EN314-51W-53RR Notebook</h4><br />
+                                    <span>$1,099.99</span><br />
+                                    
+                                    <button class="buyNow" data-id="66" data-name="ENDURO N3 EN314-51W-53RR Notebook" data-model="Acer" data-price="1099.99" data-image="lp11.jpg">Buy Now</button>
+                                    <button class="addToCart" data-id="66" data-price="1099.99" data-name="ENDURO N3 EN314-51W-53RR Notebook" data-image="lp11.jpg">Add to Cart</button>
+                                </td>
+                                <td>
+                                    <img class="img-thumbnail" src="images/lp12.jpg" alt="Product Image" />
+                                    <h4>Laptop4</h4><br />
+                                    <span>$999.00</span><br />
+                                    
+                                    <button class="buyNow" data-id="67" data-name="Laptop4" data-model="Acer" data-price="999.00" data-image="lp12.jpg">Buy Now</button>
+                                    <button class="addToCart" data-id="67" data-price="999.00" data-name="Laptop4" data-image="lp12.jpg">Add to Cart</button>
+                                </td>
+                                </tr> `;
+                                
+
+                $('#item-row').html(laptop_rows);
+
+                $('#best-seller-items').html('');
+            }
+            else if(id == 2) //desktops products
+            {
+                var desktop_rows = `<tr>
+                                    <td>
+                                        <img class="img-thumbnail" src="images/desktop1.jpg" alt="Product Image" />
+                                        <h4>Chromebox</h4><br />
+                                        <span>$629.99</span><br />
+                                        
+                                        <button class="buyNow" data-id="68" data-name="Chromebox" data-model="Acer" data-price="629.99" data-image="desktop1.jpg">Buy Now</button>
+                                        <button class="addToCart" data-id="68" data-price="629.99" data-name="Chromebox" data-image="desktop1.jpg">Add to Cart</button>
+                                    </td>
+                                    <td>
+                                        <img class="img-thumbnail" src="images/desktop2.jpg" alt="Product Image" />
+                                        <h4>Veriton X4680G Desktop Computer</h4><br />
+                                        <span>$1,049.99</span><br />
+                                        
+                                        <button class="buyNow" data-id="68" data-name="Veriton X4680G Desktop Computer" data-model="Acer" data-price="1049.99" data-image="desktop2.jpg">Buy Now</button>
+                                        <button class="addToCart" data-id="68" data-price="1049.99" data-name="Veriton X4680G Desktop Computer" data-image="desktop2.jpg">Add to Cart</button>
+                                    </td>
+                                    </tr>`;
+
+                $('#item-row').html(desktop_rows);
+                $('#best-seller-items').html('');
+            }
+            else if(id == 3) //monitors - products
+            {
+                var monitor_rows = `<tr>
+                                    <td>
+                                        <img class="img-thumbnail" src="images/monitor1.jpeg" alt="Product Image" />
+                                        <h4>EI342CKR Pbmiippx</h4><br />
+                                        <span>$499.99</span><br />
+                                        
+                                        <button class="buyNow" data-id="90" data-name="EI342CKR Pbmiippx" data-model="Acer" data-price="499.99" data-image="monitor1.jpeg">Buy Now</button>
+                                        <button class="addToCart" data-id="90" data-price="499.99" data-name="EI342CKR Pbmiippx" data-image="monitor1.jpeg">Add to Cart</button>
+                                    </td>
+                                    <td>
+                                        <img class="img-thumbnail" src="images/monitor2.jpeg" alt="Product Image" />
+                                        <h4>ASUS Republic of Gamers Strix</h4><br />
+                                        <span>$399.99</span><br />
+                                        
+                                        <button class="buyNow" data-id="91" data-name="ASUS Republic of Gamers Strix" data-model="Acer" data-price="399.99" data-image="monitor2.jpeg">Buy Now</button>
+                                        <button class="addToCart" data-id="91" data-price="399.99" data-name="ASUS Republic of Gamers Strix" data-image="monitor2.jpeg">Add to Cart</button>
+                                    </td>
+                                    <td>
+                                        <img class="img-thumbnail" src="images/monitor3.jpeg" alt="Product Image" />
+                                        <h4>Gigabyte G34WQC</h4><br />
+                                        <span>$379.99</span><br />
+                                        
+                                        <button class="buyNow" data-id="92" data-name="Gigabyte G34WQC" data-model="Acer" data-price="379.99" data-image="monitor3.jpeg">Buy Now</button>
+                                        <button class="addToCart" data-id="92" data-price="379.99" data-name="Gigabyte G34WQC" data-image="monitor3.jpeg">Add to Cart</button>
+                                    </td>
+                                    
+                                    </tr>`;
+
+                $('#item-row').html(monitor_rows);
+                $('#best-seller-items').html('');
+            }
+            else if(id == 4) //accesories - products
+            {
+                var accessories_rows = `<tr>
+                                        <td>
+                                            <img class="img-thumbnail" src="images/acces1.jpg" alt="Product Image" />
+                                            <h4>Nitro Headset | Black</h4><br />
+                                            <span>$39.99</span><br />
+                                            
+                                            <button class="buyNow" data-id="50" data-name="Nitro Headset | Black" data-model="Acer" data-price="39.99" data-images/acces1.jpg">Buy Now</button>
+                                            <button class="addToCart" data-id="50" data-price="39.99" data-name="Nitro Headset | Black" data-image = acces1.jpg">Add to Cart</button>
+                                        </td>   
+                                        <td>
+                                            <img class="img-thumbnail" src="images/acces2.jpg" alt="Product Image" />
+                                            <h4>Wireless Optical Mouse for CB | White</h4><br />
+                                            <span>$24.99</span><br />
+                                            
+                                            <button class="buyNow" data-id="51" data-name="Wireless Optical Mouse for CB | White" data-model="Acer" data-price="24.99" data-image = acces2.jpg">Buy Now</button>
+                                            <button class="addToCart" data-id="51" data-price="24.99" data-name="Wireless Optical Mouse for CB | White" data-image = acces2.jpg">Add to Cart</button>
+                                        </td>   
+                                        <td>
+                                            <img class="img-thumbnail" src="images/acces3.jpg" alt="Product Image" />
+                                            <h4>AMR800 Acer 2.4G Mouse | White</h4><br />
+                                            <span>$24.99</span><br />
+                                            
+                                            <button class="buyNow" data-id="52" data-name="AMR800 Acer 2.4G Mouse | White" data-model="Acer" data-price="24.99" data-image =acces3.jpg">Buy Now</button>
+                                            <button class="addToCart" data-id="52" data-price="24.99" data-name="AMR800 Acer 2.4G Mouse | White" data-image = acces3.jpg">Add to Cart</button>
+                                        </td>   
+                                        </tr>
+                                        <tr>
+                                        <td>
+                                            <img class="img-thumbnail" src="images/acces4.jpg" alt="Product Image" />
+                                            <h4>Predator Aethon 301 TKL Keyboard - PKB010 - PMP711</h4><br />
+                                            <span>$69.99</span><br />
+                                            
+                                            <button class="buyNow" data-id="53" data-name="Predator Aethon 301 TKL Keyboard - PKB010 - PMP711" data-model="Acer" data-price="69.99" data-image = acces4.jpg">Buy Now</button>
+                                            <button class="addToCart" data-id="53" data-price="69.99" data-name="Predator Aethon 301 TKL Keyboard - PKB010 - PMP711" data-image = acces4.jpg">Add to Cart</button>
+                                        </td>  
+                                        <td>
+                                            <img class="img-thumbnail" src="images/acces5.jpg" alt="Product Image" />
+                                            <h4>Predator Alien Jungle Mouse Pad - PMP711</h4><br />
+                                            <span>$19.99</span><br />
+                                            
+                                            <button class="buyNow" data-id="54" data-name="Predator Alien Jungle Mouse Pad - PMP711" data-model="Acer" data-price="19.99" data-image =acces5.jpg">Buy Now</button>
+                                            <button class="addToCart" data-id="54" data-price="19.99" data-name="Predator Alien Jungle Mouse Pad - PMP711" data-image = acces5.jpg">Add to Cart</button>
+                                        </td>  
+                                        <td>
+                                            <img class="img-thumbnail" src="images/acces6.jpg" alt="Product Image" />
+                                            <h4>Porsche Design Acer Travelpack RS - AAK010</h4><br />
+                                            <span>$99.99</span><br />
+                                            
+                                            <button class="buyNow" data-id="55" data-name="Porsche Design Acer Travelpack RS - AAK010" data-model="Acer" data-price="99.99" data-image = acces6.jpg">Buy Now</button>
+                                            <button class="addToCart" data-id="55" data-price="99.99" data-name="Porsche Design Acer Travelpack RS - AAK010" data-image = acces6.jpg">Add to Cart</button>
+                                        </td>
+                                        </tr>`;
+
+                $('#item-row').html(accessories_rows);
+                $('#best-seller-items').html('');
+            }
+            else if(id == 0)
+            {
+                window.location.href = "Products.html";
+            }
+        }
+
+        $(document).on('click', '.buyNow', function() {
+            var id = $(this).data('id');
+            var name = $(this).data('name');
+            var model = $(this).data('model');
+            var price = $(this).data('price');
+            var image = $(this).data('image');
+            var count = $('#count').val();
+
+            $('#count').val(2);
+
+            if(count == 0 || count == 2)
+            {
+                var table_row_data = `<tr id="table--row--order">
+                                    <td>
+                                        <input type="hidden" id="product--price" value="${price}" />
+                                        <input type="hidden" id="product--qty" value="1" />
+                                        <img src="images/${image}" alt="Image" /><br />
+                                        <h4>Brand Name: ${name}</h4><br />
+                                        <h4>Model: ${model}</h4><br />
+                                        <span>Price: $<span id="product---text">${price}</span>.00</span><br /><br />
+                                        <button onclick="subtractOrder(${price});">-</button><span id="qty---text">1</span><button onclick="addOrder(${price});">+</button>
+                                    </td>
+                                </tr>`;
+
+                $('#but--now--table').html(table_row_data);
+                var total_amount_data = `<tr>
+                                            <td>
+                                                <input type="hidden" id="total---amount--value" value="0" />
+                                                <h4>Total Amount: $<span id="display--amount">100</span>.00</h4>
+                                            </td>
+                                        </tr>`;
+
+                $('#total---amount').html(total_amount_data);
+
+                var tender_payment_data = `<tr>
+                                                <td>
+                                                    <input type="hidden" id="customer__change__value" />
+                                                    <span>Cash Tendered: $ <input type="number" id="cash----tendered" onkeyup="cashTendered();" /></span><br /><br />
+                                                    <span>Customer Change: $<span id="display--cs-change">0</span>.00</span><br />
+                                                </td>
+                                            </tr>`;
+                        
+                $('#tender--payment--table').html(tender_payment_data);
+
+                var place_order_data = `<tr>
+                                            <td>
+                                                <button onclick="placeOrder();">Place Order</button>
+                                            </td>
+                                        </tr>`;
+
+                $('#place---order----table').html(place_order_data);
+
+                $('#total---amount--value').val(price);
+                $('#display--amount').html(price);
+
+                $('#place--order--table').html('');
+                $('#add--to--cart--tables').html('');
+            }
+        });
+
+
+        // LOGIN FORM
+        const loginbutton = document.getElementById('login_btn'); 
+                loginbutton.addEventListener('click', e => { //addEventListener method/ function sa javascript nga maclick sa isa ka button
+                    var username = document.getElementById('username').value;
+                    var password = document.getElementById('password').value;
+
+                    var input_username = document.getElementsByClassName('username')[0].value;
+                    var input_password = document.getElementsByClassName('password')[0].value;
+                    
+                    if(input_username == username && input_password == password)
+                    {
+                        var overlay = document.getElementById('overlay');
+                        overlay.classList.remove("open");
+                        overlay.classList.add("close");
+
+                        var url = "Products.html"; //REDIRECT TO PRODUCT
+                        window.open(url);
+                    }
+                    else
+                    {
+                        alert(`You can't go to google! Please try again.`); 
+                    }
+                })
     </script>
-
 </body>
 </html>
